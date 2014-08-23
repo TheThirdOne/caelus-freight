@@ -3,7 +3,8 @@
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <link rel="stylesheet" type="text/css" href="css/planets.css">
     <link rel="stylesheet" type="text/css" href="css/interface.css">
-    <script src="asteroids.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/stars.css">
+    <script src="generator.js"></script>
   </head>
   <body>
     <!--
@@ -15,6 +16,11 @@
       <div class="logo"></div>
     </div>
     <div class="map">
+      <div class="starscape">
+        <div id="stars-container">
+          <div id="star" class="planet" style="background:white;height:1px;width:1px;"></div>
+        </div>
+      </div>
       <div class="sol"></div>
       <div class="track trackEarth">
         <div class="planet earth shadow" style="margin-top:3px;z-index:10;"></div>

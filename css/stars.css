@@ -1,0 +1,14 @@
+#stars-container {
+  z-index: -1;
+  background: #282A3A;
+  transform-origin: 50% 50%;
+  -webkit-transform-origin:  50% 50%;
+  /*-webkit-animation: rotate360 12.0s linear infinite;
+  animation: rotate360 12.0s linear infinite;*/
+}
+.starscape {
+  background: #282A3A;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+}
