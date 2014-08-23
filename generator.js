@@ -10,8 +10,9 @@ function toggleAsteroids() {
 }
 
 function toggleStars() {
-  if (document.getElementById('starsContainer')[1] != undefined) {
+  if (document.getElementById('starsContainer').childNodes[1] != undefined) {
     //Remove Stars
+    resetStars();
     document.getElementById('starToggle').className -= ' checked';
   } else{
     generateStars();
@@ -21,6 +22,10 @@ function toggleStars() {
 
 function resetAsteroids() {
   document.getElementsByClassName('trackAsteroids')[0].innerHTML = document.getElementsByClassName('trackAsteroids')[0].childNodes[1].outerHTML; 
+}
+
+function resetStars() {
+  document.getElementById('starsContainer').innerHTML = document.getElementById('starsContainer').childNodes[1].outerHTML; 
 }
 
 function generateAsteroids(){
@@ -40,7 +45,7 @@ function generateAsteroids(){
 
 function generateStars(container){
   var a = document.getElementById('starsContainer');
-  var b = a.childNodes[1];
+  var b = a.childNodes[0];
 
   for(var i = 0;i < 180; i+=.25){
     var c = b.cloneNode();
