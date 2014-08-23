@@ -6,26 +6,15 @@
   left: 500px;
   top:50px;
 }
-.planet{
+/*.planet{
   height:100px;
   -webkit-animation-duration: 7s;
   -webkit-animation-name: rotate360;
   -webkit-animation-fill-mode: forwards;
   -webkit-animation-iteration-count:  infinite;
   -webkit-animation-timing-function: linear;
-}
-#moon{
-  position:relative;
-  top:-120px;
-  left:30px;
-  height:100px;
-  width:100px;
-  border-radius:100px;
-  box-shadow:-10px 10px 0px rgba(0, 0, 0, 0.5);
-}
-.rapper{
-  overflow:hidden;
-}
+}*/
+
 @-webkit-keyframes fly{
   from{
     transform: rotate(0deg);
@@ -147,9 +136,9 @@ html, body {
   position: absolute;
   top: 50%;
   left: 50%;
-  margin: -40px 0 0 -40px;
-  width: 80px;
-  height: 80px;
+  margin: -30px 0 0 -30px;
+  width: 60px;
+  height: 60px;
   border-radius: 50%;
   background: yellow;
 }
@@ -214,4 +203,10 @@ html, body {
   width: 28px;
   height: 28px;
   background: #5b7dad;
+}
+
+.shadow{
+  border-radius:100px;
+  background:rgba(0,0,0,0);
+  box-shadow: 0px -10px 0px rgba(0, 0, 0, .8);
 }
