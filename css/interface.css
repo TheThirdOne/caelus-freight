@@ -28,7 +28,11 @@
 	padding: .5em;
 }
 .bottomBar {
+	position: inherit;
 	width: 75%;
+	bottom: 0%;
+	right: 0%;
+
 }
 .sideBar {
 	top: 0%;
@@ -42,4 +46,9 @@
 	left: 50%;
 	top: 50%;
 	z-index: 10;
+}
+.clickable {
+	text-align: center;
+	width: 15%;
+	margin: .25em;
 }
