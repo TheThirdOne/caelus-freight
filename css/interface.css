@@ -34,6 +34,7 @@
 	bottom: 0%;
 	right: 0%;
 	padding: .75em;
+	line-height: 2em;
 }
 .sideBar {
 	top: 0%;
@@ -51,10 +52,47 @@
 .clickable {
 	display: inline;
 	text-align: center;
-	width: 15%;
-	margin: .5em;
+	width: 100%;
+	padding: 0px;
+	margin: 0px; 
 	text-decoration: none;
+}
+.subTable {
+	width: 15%;
+	margin: .25em;
+}
+table {
+	width: 100%;
+}
+td {
+	height: 3em;
+	width: 12.5%;
 }
 .clickable:hover {
 	background: rgba(255,255,255,0.15);
+}
+td .clickable {
+	width: 50px;
+}
+.success {
+	background-color:  rgba(69, 123, 64, 0.3);
+}
+.success:hover {
+	background-color:  rgba(69, 123, 64, 0.7);
+}
+.info {
+	background-color: rgba(69, 113, 203, 0.3);
+}
+.info:hover {
+	background-color: rgba(69, 113, 203, 0.7);
+}
+.alert {
+	background-color: rgba(139, 110, 67, 0.4);
+}
+.alert:hover {
+	background-color: rgba(139, 110, 67, 0.7);
+}
+.disabled {
+	background-color: rgba(255,255,255,0.2);
+	color: rgba(255,255,255,0.5);
 }
