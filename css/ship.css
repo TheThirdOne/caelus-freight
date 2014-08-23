@@ -23,16 +23,16 @@
   box-shadow: 0 0 10px #20D0F4;
 }
 .body{
-  height:100%;
-  width:100%;
-  left:15%;
-  top:3%;
+  height:150%;
+  width:150%;
+  left:22.5%;
+  top:4.5%;
   position: absolute;
 }
 .wing{
-  height:100%;
-  width:100%;
-  top:5%;
+  height:150%;
+  width:150%;
+  top:7.5%;
   position: absolute;
 }
 .main{
@@ -71,11 +71,6 @@
   top:5%;
   position:absolute;
   background-color: gray;
-}
-.wing{
-  height:100%;
-  width:100%;
-  position: absolute;
 }
 .engine{
   width:2.5%;
@@ -120,5 +115,4 @@
 #container{
   height:300px;
   width:300px;
-  position: relative;
 }
