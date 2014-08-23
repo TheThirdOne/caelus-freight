@@ -5,6 +5,10 @@
 	top: 0%;
 	left: 0%;
 }
+.panel {
+	background: rgba(255,255,255,0.3);
+	border: 1px solid rgba(255,255,255,0.5);
+}
 .logo {
 	background-image: url(../img/Caelus-logoAlpha.png);
 	background-size: 89px 45px;
@@ -16,8 +20,26 @@
 	height: 45px;
 }
 .hidden {
-	display: hidden;
+	display: none;
 }
 .checked {
 	border: 1px solid rgba(255,255,255,0.8);
+	margin: .5em;
+	padding: .5em;
+}
+.bottomBar {
+	width: 75%;
+}
+.sideBar {
+	top: 0%;
+	width: 15%;
+}
+.options {
+	text-align: center;
+	position: absolute;
+	width: 25%;
+	margin-left: -12.5%;
+	left: 50%;
+	top: 50%;
+	z-index: 10;
 }

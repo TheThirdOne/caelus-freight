@@ -6,6 +6,7 @@
     <link rel="stylesheet" type="text/css" href="css/stars.css">
     <link rel="stylesheet" type="text/css" href="css/ship.css">
     <script src="generator.js"></script>
+    <script src="interface.js"></script>
   </head>
   <body>
     <!--
@@ -71,13 +72,6 @@
       </div>
     </div>
     -->
-    <div class="interface">
-      <div class="logo"></div>
-      <div class="options hidden">
-        <a href="" id="asteroidToggle" onClick="toggleAsteroids();">Asteroids toggle</a>
-        <a href="" id="starToggle" onClick="toggleStars();">Stars toggle</a>
-      </div>
-    </div>
     <div class="map">
       <div class="starscape">
         <div id="starsContainer">
@@ -111,6 +105,20 @@
       <div class="track trackNeptune">
         <div class="planet neptune shadow" style="margin-top:-5px;z-index:10;"></div>
         <div class="planet neptune"></div>
+      </div>
+    </div>
+    <div class="interface">
+      <div class="logo"></div>
+      <div class="sideBar panel"></div>
+      <div class="bottomBar panel">
+        <p id="optionsToggle" onClick="toggleOptions();">Options</p>
+      </div>
+      <div id="optionsHider" class="hidden">
+        <div id="optionsMenu" class="options panel">
+          <p href="" id="asteroidToggle" onClick="toggleAsteroids();">Asteroids toggle</p>
+          <p href="" id="starToggle" onClick="toggleStars();">Stars toggle</p>
+          <p href="" >Info bar toggle</p>
+        </div>
       </div>
     </div>
   </body>
