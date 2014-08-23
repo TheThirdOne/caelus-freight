@@ -74,34 +74,37 @@
         </div>
       </div>
       <div class="sol"></div>
-      <div class="track trackEarth">
+      <div class="track trackEarth" onClick="clickInfo(0);">
         <div class="planet earth shadow" style="margin-top:3px;z-index:10;"></div>
         <div class="planet earth"></div>
       </div>
-      <div class="track trackMars">
+      <div class="track trackMars" onClick="clickInfo(1);">
         <div class="planet mars shadow" style="margin-top:-1px;z-index:10;"></div>
         <div class="planet mars"></div>
       </div>
-      <div class="track trackAsteroids"><div id="asteroid" class="planet" style="background:white;height:1px;width:1px;"></div></div>
-      <div class="track trackJupiter">
+      <div class="track trackAsteroids" onClick="clickInfo(2);"><div id="asteroid" class="planet" style="background:white;height:1px;width:1px;"></div></div>
+      <div class="track trackJupiter" onClick="clickInfo(3);">
         <div class="planet jupiter shadow" style="margin-top:-13px;z-index:10;"></div>
         <div class="planet jupiter"></div>
       </div>
-      <div class="track trackSaturn">
+      <div class="track trackSaturn" onClick="clickInfo(4);">
         <div class="planet saturn shadow" style="margin-top:-16px;z-index:10;"></div>
         <div class="planet saturn"></div>
       </div>
-      <div class="track trackUranus">
+      <div class="track trackUranus" onClick="clickInfo(5);">
         <div class="planet uranus shadow" style="margin-top:-6px;z-index:10;"></div>
         <div class="planet uranus"></div>
       </div>
-      <div class="track trackNeptune">
+      <div class="track trackNeptune" onClick="clickInfo(6);">
         <div class="planet neptune shadow" style="margin-top:-5px;z-index:10;"></div>
         <div class="planet neptune"></div>
       </div>
     </div>
       <a href="https://github.com/TheThirdOne/caelus-freight" class="logo"></a>
-      <div class="sideBar panel"></div>
+      <div class="sideBar panel">
+        <h2>PlanetID: <span id="planetIdInfo"></span></h2>
+        <h1 id="flyToButton" class="panel clickable success">Fly to</h1>
+      </div>
       <div class="bottomBar panel">
         <table>
           <tr>
@@ -126,8 +129,15 @@
         <p class="panel clickable" id="optionsToggle" onClick="toggleOptions();">Options</p>
         <a class="panel clickable" href="http://www.ludumdare.com/">Ludem Dare?</a>
       </div>
+      <div id="verifyFlyHider" class="hidden">
+        <div id="verifyFlyMenu" class="panel">
+          <h1>Are you sure you want to fly to Planet ID: <span id="planetId"></span>?</h1>
+          <hr>
+          <h1 class="panel clickable success">Yes!</h1>
+        </div>
+      </div>
       <div id="optionsHider" class="hidden">
-        <div id="optionsMenu" class="options panel">
+        <div id="optionsMenu" class="panel">
           <p href="" id="asteroidToggle" onClick="toggleAsteroids();">Asteroids toggle</p>
           <p href="" id="starToggle" onClick="toggleStars();">Stars toggle</p>
           <p href="" >Info bar toggle</p>
