@@ -3,7 +3,8 @@
   -webkit-animation-name: fly;
   -webkit-animation-fill-mode: forwards;
   position: relative;
-  left: 200px;
+  left: 500px;
+  top:50px;
 }
 .planet{
   height:100px;
@@ -28,15 +29,35 @@
 @-webkit-keyframes fly{
   from{
     transform: rotate(0deg);
+    height:10px;
+    width:10px;
+    margin:-5 0 0 -5;
   }
-  
+  20%{
+    transform: rotate(0deg);
+    height:100px;
+    width:100px;
+    margin:-50 0 0 -50;
+  }
   50%{
     transform: rotate(90deg);
-    left: 200px;
+    left: 500px;
+    height:100px;
+    width:100px;
+  }
+  80%{
+    transform: rotate(90deg);
+    left: 0px;
+    height:100px;
+    width:100px;
+    margin:-50 0 0 -50;
   }
   to{
     transform: rotate(90deg);
-    left: 0px;
+    left: 50px;
+    height:10px;
+    width:10px;
+    margin:-5 0 0 -5;
   }
 }
 @-webkit-keyframes rotate360{
