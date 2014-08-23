@@ -1,0 +1,124 @@
+.bodyMiddle{
+  width:5%;
+  height:25%;
+  top:1%;
+  left:5%;
+  position:absolute;
+  background-color: gray;
+}
+.bodySide{
+  width:5%;
+  height:30%;
+  position:absolute;
+  background-color: yellow;
+}
+.light{
+  width:3%;
+  height:3%;
+  left:3%;
+  top:3%;
+  position:absolute;
+  border-radius: 50%;
+  background-color: #17c0e9;
+  box-shadow: 0 0 10px #20D0F4;
+}
+.body{
+  height:100%;
+  width:100%;
+  left:15%;
+  top:3%;
+  position: absolute;
+}
+.wing{
+  height:100%;
+  width:100%;
+  top:5%;
+  position: absolute;
+}
+.main{
+  width:10%;
+  height:40%;
+  position:absolute;
+  background-color: yellow;
+}
+.wingbase{
+  width:13%;
+  height:13%;
+  top:27%;
+  left:-1.5%;
+  position:absolute;
+  background-color: yellow;
+}
+.stripe{
+  width:5%;
+  height:30%;
+  top:5%;
+  left:2.5%;
+  position:absolute;
+  background-color: gray;
+}
+.stripebase{
+  width:7%;
+  height:10%;
+  top:30%;
+  left:1.5%;
+  position:absolute;
+  background-color: gray;
+}
+.crossstripe{
+  width:10%;
+  height:2%;
+  top:5%;
+  position:absolute;
+  background-color: gray;
+}
+.wing{
+  height:100%;
+  width:100%;
+  position: absolute;
+}
+.engine{
+  width:2.5%;
+  height:10%;
+  top:31%;
+  position: absolute;
+  background-color: gray;
+  box-shadow: 0 5px 5px orange;
+}
+.connector{
+  height:12%;
+  width:10%;
+  left:10%;
+  top:8%;
+  position: absolute;
+  background-color: yellow;
+}
+.antenna{
+  height:60%;
+  width:1%;
+  left:3%;
+  top:-4%;
+  position: absolute;
+  background-color: gray;
+}
+.crossbar{
+  height:3%;
+  width:9%;
+  left:3%;
+  top:52%;
+  position: absolute;
+  background-color: gray;
+}
+.tail{
+  height:10%;
+  width:5%;
+  left:0%;
+  top:50%;
+  position: absolute;
+  background-color: yellow;
+}
+#container{
+  height:300px;
+  width:300px;
+  position: relative;
+}
