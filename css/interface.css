@@ -1,0 +1,17 @@
+.interface {
+	position: fixed;
+	width: 100%;
+	min-height: 100%;
+	top: 0%;
+	left: 0%;
+}
+.logo {
+	background-image: url(../img/Caelus-logoAlpha.png);
+	background-size: 89px 45px;
+	background-repeat: no-repeat;
+	position: inherit;
+	left: 0%;
+	bottom: 0%;
+	width: 89px;
+	height: 45px;
+}
