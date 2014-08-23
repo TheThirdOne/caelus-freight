@@ -1,0 +1,49 @@
+.ship{
+  -webkit-animation-duration: 7s;
+  -webkit-animation-name: fly;
+  -webkit-animation-fill-mode: forwards;
+  position: relative;
+  left: 200px;
+}
+.planet{
+  height:100px;
+  -webkit-animation-duration: 7s;
+  -webkit-animation-name: rotate360;
+  -webkit-animation-fill-mode: forwards;
+  -webkit-animation-iteration-count:  infinite;
+  -webkit-animation-timing-function: linear;
+}
+#moon{
+  position:relative;
+  top:-120px;
+  left:30px;
+  height:100px;
+  width:100px;
+  border-radius:100px;
+  box-shadow:-10px 10px 0px rgba(0, 0, 0, 0.5);
+}
+.rapper{
+  overflow:hidden;
+}
+@-webkit-keyframes fly{
+  from{
+    transform: rotate(0deg);
+  }
+  
+  50%{
+    transform: rotate(90deg);
+    left: 200px;
+  }
+  to{
+    transform: rotate(90deg);
+    left: 0px;
+  }
+}
+@-webkit-keyframes rotate360{
+  from{
+    transform: rotate(0deg);
+  }
+  to{
+    transform: rotate(360deg);
+  }
+}
