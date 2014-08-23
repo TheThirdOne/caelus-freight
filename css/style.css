@@ -24,22 +24,22 @@
   }
   20%{
     transform: rotate(180deg);
-    height:100px;
-    width:100px;
-    margin:-50 0 0 -50;
+    height:50px;
+    width:50px;
+    margin:-25 0 0 -25;
   }
   50%{
     transform: rotate(270deg);
     left: 500px;
-    height:100px;
-    width:100px;
-    margin:-50 0 0 -50;
+    height:50px;
+    width:50px;
+    margin:-25 0 0 -25;
   }
   80%{
     transform: rotate(270deg);
     left: 0px;
-    height:100px;
-    width:100px;
+    height:50px;
+    width:50px;
     margin:-50 0 0 0;
   }
   to{

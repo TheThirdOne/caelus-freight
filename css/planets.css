@@ -15,7 +15,7 @@
   margin: -60px 0 0 -60px;
   width: 120px;
   height: 120px;
-  -webkit-animation: rotate360 2s linear infinite;
+  -webkit-animation: rotate360 5s linear infinite;
   animation: rotate360 2s linear infinite;
   z-index: 7;
 }
@@ -24,7 +24,7 @@
   margin: -95px 0 0 -95px;
   width: 190px;
   height: 190px;
-  -webkit-animation: rotate360 10s linear infinite;
+  -webkit-animation: rotate360 15s linear infinite;
   animation: rotate360 3.76s linear infinite;
   z-index: 6;
 }
@@ -33,7 +33,7 @@
   margin: -137.5px 0 0 -137.5px;
   width: 275px;
   height: 275px;
-  -webkit-animation: rotate360 23.72s linear infinite;
+  -webkit-animation: rotate360 25s linear infinite;
   animation: rotate360 23.72s linear infinite;
   z-index: 4;
 }
@@ -42,7 +42,7 @@
   margin: -190px 0 0 -190px;
   width: 380px;
   height: 380px;
-  -webkit-animation: rotate360 23.72s linear infinite;
+  -webkit-animation: rotate360 35s linear infinite;
   animation: rotate360 23.72s linear infinite;
   z-index: 4;
 }
