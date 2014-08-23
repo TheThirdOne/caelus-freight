@@ -1,6 +1,7 @@
 function toggleAsteroids() {
   if (document.getElementsByClassName('trackAsteroids')[0].childNodes[3] != undefined) {
     //Remove Asteroids
+    resetAsteroids();
     document.getElementById('asteroidToggle').className -= ' checked';
   } else{
     generateAsteroids();
@@ -18,9 +19,13 @@ function toggleStars() {
   };
 }
 
+function resetAsteroids() {
+  document.getElementsByClassName('trackAsteroids')[0].innerHTML = document.getElementsByClassName('trackAsteroids')[0].childNodes[1].outerHTML; 
+}
+
 function generateAsteroids(){
   var a = document.getElementsByClassName('trackAsteroids')[0];
-  var b = a.childNodes[1];
+  var b = a.childNodes[0];
 
   for(var i = 0;i < 180; i+=.25){
     var c = b.cloneNode();
