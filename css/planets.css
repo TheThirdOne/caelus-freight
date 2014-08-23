@@ -1,0 +1,141 @@
+.track{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  border: 1px solid #161616;
+  border-radius: 50%;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+.track:hover {
+  border: 1px solid #2682D5;
+}
+
+.trackEarth {
+  margin: -60px 0 0 -60px;
+  width: 120px;
+  height: 120px;
+  -webkit-animation: rotate360 2s linear infinite;
+  animation: rotate360 2s linear infinite;
+  z-index: 7;
+}
+
+.trackMars {
+  margin: -95px 0 0 -95px;
+  width: 190px;
+  height: 190px;
+  -webkit-animation: rotate360 10s linear infinite;
+  animation: rotate360 3.76s linear infinite;
+  z-index: 6;
+}
+
+.trackJupiter {
+  margin: -137.5px 0 0 -137.5px;
+  width: 275px;
+  height: 275px;
+  -webkit-animation: rotate360 23.72s linear infinite;
+  animation: rotate360 23.72s linear infinite;
+  z-index: 4;
+}
+
+.trackAsteroids{
+  margin: -190px 0 0 -190px;
+  width: 380px;
+  height: 380px;
+  -webkit-animation: rotate360 23.72s linear infinite;
+  animation: rotate360 23.72s linear infinite;
+  z-index: 4;
+}
+
+.trackSaturn {
+  margin: -220px 0 0 -220px;
+  width: 440px;
+  height: 440px;
+  -webkit-animation: rotate360 50s linear infinite;
+  animation: rotate360 58.92s linear infinite;
+  z-index: 3;
+}
+
+.trackUranus {
+  margin: -270px 0 0 -270px;
+  width: 540px;
+  height: 540px;
+  -webkit-animation: rotate360 100s linear infinite;
+  animation: rotate360 168.02s linear infinite;
+  z-index: 2;
+}
+
+.trackNeptune {
+  margin: -310px 0 0 -310px;
+  width: 620px;
+  height: 620px;
+  -webkit-animation: rotate360 200s linear infinite;
+  animation: rotate360 329.6s linear infinite;
+  z-index: 1;
+}
+
+.sol {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin: -30px 0 0 -30px;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: yellow;
+}
+
+.planet{
+  position: absolute;
+  top: 0;
+  left: 50%;
+  border-radius: 50%;
+}
+
+.earth {
+  margin: -6px 0 0 -6px;
+  width: 12px;
+  height: 12px;
+  background: #81b3d4;
+}
+
+.mars {
+  margin: -10px 0 0 -10px;
+  width: 20px;
+  height: 20px;
+  background: #d66523;
+}
+
+.jupiter {
+  margin: -22.5px 0 0 -22.5px;
+  width: 45px;
+  height: 45px;
+  background: #ea9e6a;
+}
+
+.saturn {
+  margin: -25px 0 0 -25px;
+  width: 50px;
+  height: 50px;
+  background: #e6d48b;
+}
+
+.uranus {
+  margin: -15px 0 0 -15px;
+  width: 30px;
+  height: 30px;
+  background: #82bdcb;
+}
+
+.neptune {
+  margin: -14px 0 0 -14px;
+  width: 28px;
+  height: 28px;
+  background: #5b7dad;
+}
+
+.shadow{
+  border-radius:100px;
+  background:rgba(0,0,0,0);
+  box-shadow: 0px -10px 0px rgba(0, 0, 0, .8);
+}
