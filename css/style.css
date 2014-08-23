@@ -36,7 +36,6 @@
     margin:-25 0 0 -25;
   }
   80%{
-    transform: rotate(270deg);
     left: 0px;
     height:50px;
     width:50px;
