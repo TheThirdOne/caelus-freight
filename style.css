@@ -84,7 +84,7 @@ html, body {
   height: 120px;
   -webkit-animation: rotate360 2s linear infinite;
   animation: rotate360 2s linear infinite;
-  z-index: 6;
+  z-index: 7;
 }
 
 .trackMars {
@@ -93,13 +93,22 @@ html, body {
   height: 190px;
   -webkit-animation: rotate360 10s linear infinite;
   animation: rotate360 3.76s linear infinite;
-  z-index: 5;
+  z-index: 6;
 }
 
 .trackJupiter {
   margin: -137.5px 0 0 -137.5px;
   width: 275px;
   height: 275px;
+  -webkit-animation: rotate360 23.72s linear infinite;
+  animation: rotate360 23.72s linear infinite;
+  z-index: 4;
+}
+
+.trackAsteroids{
+  margin: -190px 0 0 -190px;
+  width: 380px;
+  height: 380px;
   -webkit-animation: rotate360 23.72s linear infinite;
   animation: rotate360 23.72s linear infinite;
   z-index: 4;
@@ -148,19 +157,6 @@ html, body {
   top: 0;
   left: 50%;
   border-radius: 50%;
-}
-.mercury {
-  margin: -3px 0 0 -3px;
-  width: 6px;
-  height: 6px;
-  background: #c2b7a4;
-}
-
-.venus {
-  margin: -5px 0 0 -5px;
-  width: 10px;
-  height: 10px;
-  background: #ede186;
 }
 
 .earth {
