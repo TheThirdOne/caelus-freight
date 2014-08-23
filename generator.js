@@ -47,7 +47,7 @@ function generateStars(container){
   var a = document.getElementById('starsContainer');
   var b = a.childNodes[0];
 
-  for(var i = 0;i < 180; i+=.25){
+  for(var i = 0;i < 720; i++){
     var c = b.cloneNode();
     var d = Math.floor(Math.random()* document.getElementById('starsContainer').clientWidth);
     var e = Math.floor(Math.random()* document.getElementById('starsContainer').clientWidth);
