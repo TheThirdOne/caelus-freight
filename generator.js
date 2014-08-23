@@ -1,3 +1,23 @@
+function toggleAsteroids() {
+  if (document.getElementsByClassName('trackAsteroids')[0].childNodes[3] != undefined) {
+    //Remove Asteroids
+    document.getElementById('asteroidToggle').className -= ' checked';
+  } else{
+    generateAsteroids();
+    document.getElementById('asteroidToggle').className += ' checked';
+  };
+}
+
+function toggleStars() {
+  if (document.getElementById('starsContainer')[1] != undefined) {
+    //Remove Stars
+    document.getElementById('starToggle').className -= ' checked';
+  } else{
+    generateStars();
+    document.getElementById('starToggle').className += ' checked';
+  };
+}
+
 function generateAsteroids(){
   var a = document.getElementsByClassName('trackAsteroids')[0];
   var b = a.childNodes[1];
@@ -14,13 +34,13 @@ function generateAsteroids(){
 }
 
 function generateStars(container){
-  var a = document.getElementById(container);
+  var a = document.getElementById('starsContainer');
   var b = a.childNodes[1];
 
   for(var i = 0;i < 180; i+=.25){
     var c = b.cloneNode();
-    var d = Math.floor(Math.random()* document.getElementById(container).clientWidth);
-    var e = Math.floor(Math.random()* document.getElementById(container).clientWidth);
+    var d = Math.floor(Math.random()* document.getElementById('starsContainer').clientWidth);
+    var e = Math.floor(Math.random()* document.getElementById('starsContainer').clientWidth);
     c.style.left = (d);
     c.style.top = (e);
     a.appendChild(c);
