@@ -1,4 +1,4 @@
-caelus-freight
+Caelus Freight
 ==============
 
-LD 48 
+Caelus Frieght is a trading empire game made for Ludem Dare 48.
