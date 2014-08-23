@@ -6,26 +6,15 @@
   left: 500px;
   top:50px;
 }
-.planet{
+/*.planet{
   height:100px;
   -webkit-animation-duration: 7s;
   -webkit-animation-name: rotate360;
   -webkit-animation-fill-mode: forwards;
   -webkit-animation-iteration-count:  infinite;
   -webkit-animation-timing-function: linear;
-}
-#moon{
-  position:relative;
-  top:-120px;
-  left:30px;
-  height:100px;
-  width:100px;
-  border-radius:100px;
-  box-shadow:-10px 10px 0px rgba(0, 0, 0, 0.5);
-}
-.rapper{
-  overflow:hidden;
-}
+}*/
+
 @-webkit-keyframes fly{
   from{
     transform: rotate(0deg);
@@ -88,40 +77,23 @@ html, body {
 .track:hover {
   border: 1px solid #2682D5;
 }
-.trackMercury {
-  margin: -50px 0 0 -50px;
-  width: 100px;
-  height: 100px;
-  -webkit-animation: rotate360 0.48s linear infinite;
-  animation: rotate360 0.48s linear infinite;
-  z-index: 8;
-}
-
-.trackVenus {
-  margin: -62.5px 0 0 -62.5px;
-  width: 125px;
-  height: 125px;
-  -webkit-animation: rotate360 1.24s linear infinite;
-  animation: rotate360 1.24s linear infinite;
-  z-index: 7;
-}
 
 .trackEarth {
-  margin: -79px 0 0 -79px;
-  width: 158px;
-  height: 158px;
+  margin: -60px 0 0 -60px;
+  width: 120px;
+  height: 120px;
   -webkit-animation: rotate360 2s linear infinite;
   animation: rotate360 2s linear infinite;
-  z-index: 6;
+  z-index: 7;
 }
 
 .trackMars {
   margin: -95px 0 0 -95px;
   width: 190px;
   height: 190px;
-  -webkit-animation: rotate360 3.76s linear infinite;
+  -webkit-animation: rotate360 10s linear infinite;
   animation: rotate360 3.76s linear infinite;
-  z-index: 5;
+  z-index: 6;
 }
 
 .trackJupiter {
@@ -133,29 +105,38 @@ html, body {
   z-index: 4;
 }
 
+.trackAsteroids{
+  margin: -190px 0 0 -190px;
+  width: 380px;
+  height: 380px;
+  -webkit-animation: rotate360 23.72s linear infinite;
+  animation: rotate360 23.72s linear infinite;
+  z-index: 4;
+}
+
 .trackSaturn {
-  margin: -205px 0 0 -205px;
-  width: 410px;
-  height: 410px;
-  -webkit-animation: rotate360 58.92s linear infinite;
+  margin: -220px 0 0 -220px;
+  width: 440px;
+  height: 440px;
+  -webkit-animation: rotate360 50s linear infinite;
   animation: rotate360 58.92s linear infinite;
   z-index: 3;
 }
 
 .trackUranus {
-  margin: -255px 0 0 -255px;
-  width: 510px;
-  height: 510px;
-  -webkit-animation: rotate360 168.02s linear infinite;
+  margin: -270px 0 0 -270px;
+  width: 540px;
+  height: 540px;
+  -webkit-animation: rotate360 100s linear infinite;
   animation: rotate360 168.02s linear infinite;
   z-index: 2;
 }
 
 .trackNeptune {
-  margin: -290px 0 0 -290px;
-  width: 580px;
-  height: 580px;
-  -webkit-animation: rotate360 329.6s linear infinite;
+  margin: -310px 0 0 -310px;
+  width: 620px;
+  height: 620px;
+  -webkit-animation: rotate360 200s linear infinite;
   animation: rotate360 329.6s linear infinite;
   z-index: 1;
 }
@@ -164,9 +145,9 @@ html, body {
   position: absolute;
   top: 50%;
   left: 50%;
-  margin: -40px 0 0 -40px;
-  width: 80px;
-  height: 80px;
+  margin: -30px 0 0 -30px;
+  width: 60px;
+  height: 60px;
   border-radius: 50%;
   background: yellow;
 }
@@ -177,19 +158,6 @@ html, body {
   left: 50%;
   border-radius: 50%;
 }
-.mercury {
-  margin: -3px 0 0 -3px;
-  width: 6px;
-  height: 6px;
-  background: #c2b7a4;
-}
-
-.venus {
-  margin: -5px 0 0 -5px;
-  width: 10px;
-  height: 10px;
-  background: #ede186;
-}
 
 .earth {
   margin: -6px 0 0 -6px;
@@ -199,23 +167,23 @@ html, body {
 }
 
 .mars {
-  margin: -4px 0 0 -4px;
-  width: 8px;
-  height: 8px;
+  margin: -10px 0 0 -10px;
+  width: 20px;
+  height: 20px;
   background: #d66523;
 }
 
 .jupiter {
-  margin: -32.5px 0 0 -32.5px;
-  width: 65px;
-  height: 65px;
+  margin: -22.5px 0 0 -22.5px;
+  width: 45px;
+  height: 45px;
   background: #ea9e6a;
 }
 
 .saturn {
-  margin: -27.5px 0 0 -27.5px;
-  width: 55px;
-  height: 55px;
+  margin: -25px 0 0 -25px;
+  width: 50px;
+  height: 50px;
   background: #e6d48b;
 }
 
@@ -231,4 +199,10 @@ html, body {
   width: 28px;
   height: 28px;
   background: #5b7dad;
+}
+
+.shadow{
+  border-radius:100px;
+  background:rgba(0,0,0,0);
+  box-shadow: 0px -10px 0px rgba(0, 0, 0, .8);
 }
