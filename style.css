@@ -44,13 +44,14 @@
     left: 500px;
     height:100px;
     width:100px;
+    margin:-50 0 0 -50;
   }
   80%{
     transform: rotate(90deg);
     left: 0px;
     height:100px;
     width:100px;
-    margin:-50 0 0 -50;
+    margin:-50 0 0 0;
   }
   to{
     transform: rotate(90deg);
