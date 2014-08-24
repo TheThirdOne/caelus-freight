@@ -64,8 +64,8 @@ function jump(to){
   if(gamestate.playerData.inventory.fuel - cost >= 0){
     gamestate.playerData.inventory.fuel -= cost;
     fly(to,gamestate.currentPlanet);
-    onLeave();
     gamestate.currentPlanet = to;
+    onLeave();
   }else{
     showNotification('You do not have enough fuel to complete the journey');
   }
