@@ -34,3 +34,12 @@ function updateInventory() {
 		};
 	};
 }
+
+function showNotification(message) {
+	document.getElementById('notificationsHider').className = '';
+	document.getElementById('notificationMessage').innerText = message;
+}
+
+function hideNotification() {
+	document.getElementById('notificationsHider').className = 'hidden';
+}

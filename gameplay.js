@@ -74,5 +74,7 @@ function transaction(itemName,itemQuantity) {
   if (itemQuantity + gamestate.playerData.inventory[itemName] >= 0 && gamestate.playerData.inventory.credits + (itemQuantity * gamestate.costCache[itemName]) >= 0 ) {
     gamestate.playerData.inventory[itemName] += itemQuantity;
     gamestate.playerData.inventory.credits += (itemQuantity * gamestate.costCache[itemName]);
+  } else{
+    showNotification("You cannot afford this transaction");
   };
 }
