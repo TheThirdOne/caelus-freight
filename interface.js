@@ -54,3 +54,11 @@ function showNotification(message) {
 function hideNotification() {
 	document.getElementById('notificationsHider').className = 'hidden';
 }
+
+function loadPlanetInterface() {
+	
+}
+
+function clearPlanetInterface() {
+	
+}

@@ -12,11 +12,13 @@ gamestate.costCache = [];
 function onStart(){
   //random gen gamestate.planetData
   //gen player stats
+  updateInventory();
   onArrive();
 }
 function onLoadGame(){
   //Load gamestate.planetData
   //load player stats
+  updateInventory();
   onArrive();
 }
 function onArrive(){
@@ -27,6 +29,8 @@ function onArrive(){
 
 function onLeave(){
   clearPlanetInterface();
+  hideInfo();
+  updateInventory();
 }
 
 function generateWorlds(){
