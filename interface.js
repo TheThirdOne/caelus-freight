@@ -1,3 +1,5 @@
+var selectedPlanet = 0;
+
 function toggleOptions() {
 	if (document.getElementById('optionsHider').className != 'hidden') {
 		document.getElementById('optionsHider').className = 'hidden';
@@ -20,7 +22,13 @@ function hideVerifyFly() {
 	document.getElementById('verifyFlyHider').className = 'hidden';
 }
 
+function verifyFlySuccess() {
+	hideVerifyFly();
+	jump(selectedPlanet);
+}
+
 function clickInfo(planetId) {
+  selectedPlanet = planetId;
 	document.getElementById('sideBarHider').className = '';
 	document.getElementById('flyToButton').onclick = function() {verifyFly(planetId)};
 	document.getElementById('planetIdInfo').innerText = gamestate.planetData[planetId].name;

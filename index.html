@@ -149,7 +149,7 @@
           <tr>
             <td><h2 class="panel clickable success">Success</h2></td>
             <td><h2 class="panel clickable disabled">Disabled</h2></td>
-            <td><h2 class="panel clickable alert" onclick="generateAnimation(toDOMLoc(getPlanetLoc(3,7000)),toDOMLoc(getPlanetLoc(5)),0)">Alert!</h2></td>
+            <td><h2 class="panel clickable alert" onclick="">Alert!</h2></td>
           </tr>
           <tr>
             <td><h2 class="panel clickable info" onClick="updateInventory();">Info</h2></td>
@@ -164,12 +164,12 @@
         <a class="panel clickable" href="http://www.ludumdare.com/">Ludem Dare?</a>
       </div>
       <div id="verifyFlyHider" class="hidden">
-        <div id="verifyFlyMenu" class="panel" onClick="hideVerifyFly()">
+        <div id="verifyFlyMenu" class="panel">
           <h1>Are you sure you want to fly to <span id="planetId"></span>?</h1>
           <hr>
-          <h1 class="panel clickable success">Yes!</h1>
+          <h1 class="panel clickable success" onClick="verifyFlySuccess()">Yes!</h1>
           <br>
-          <small>(Click here to cancel)</small>
+          <h1 class="panel clickable success" onClick="hideVerifyFly()">Cancel</h1>
         </div>
       </div>
       <div id="notificationsHider" class="hidden" onClick="hideNotification();">
