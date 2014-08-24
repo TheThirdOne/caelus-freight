@@ -18,13 +18,16 @@ function flyBetweenPlanets(to,from){
   generateAnimation(toDOMLoc(getPlanetLoc(to,Number.parseInt(style.webkitAnimationDuration)*1000)),toDOMLoc(getPlanetLoc(from)),0);
 }
 
-function fly(to,from){
+function getDistance(to,from){
   var locs = [toDOMLoc(getPlanetLoc(to,7000)),toDOMLoc(getPlanetLoc(from))];
-  var d = Math.sqrt((locs[0][0]-locs[1][0])*(locs[0][0]-locs[1][0])+(locs[0][1]-locs[1][1])*(locs[0][1]-locs[1][1])); //distance
+  var d = Math.sqrt((locs[0][0]-locs[1][0])*(locs[0][0]-locs[1][0])+(locs[0][1]-locs[1][1])*(locs[0][1]-locs[1][1]));
+  return d;
+}
+function fly(to,from){
+  var d = getDistance(to,from);
   var style = document.getElementById('container').style;
   style.webkitAnimationDuration = ''+((d/20) | 0)+'s';
   flyBetweenPlanets(to,from);
-  return d;
 }
 
 function toDOMLoc(loc){
