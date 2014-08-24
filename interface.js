@@ -1,24 +1,32 @@
 var selectedPlanet = 0;
 
+function hide(id) {
+	document.getElementById(id).className = 'hidden';
+}
+
+function reveal(id) {
+	document.getElementById(id).className = '';
+}
+
 function toggleOptions() {
 	if (document.getElementById('optionsHider').className != 'hidden') {
-		document.getElementById('optionsHider').className = 'hidden';
+		hide('optionsHider');
 	} else{
-		document.getElementById('optionsHider').className = '';
+		reveal('optionsHider');
 	};
 }
 
 function hideInfo() {
-	document.getElementById('sideBarHider').className = 'hidden';
+	hide('sideBarHider');
 }
 
 function verifyFly(planetId) {
-	document.getElementById('verifyFlyHider').className = '';
+	reveal('verifyFlyHider');
 	document.getElementById('planetId').innerText = gamestate.planetData[planetId].name;
 }
 
 function hideVerifyFly() {
-	document.getElementById('verifyFlyHider').className = 'hidden';
+	hide('verifyFlyHider');
 }
 
 function verifyFlySuccess() {
@@ -29,13 +37,13 @@ function verifyFlySuccess() {
 function clickInfo(planetId) {
 	selectedPlanet = planetId;
 	if (gamestate.currentPlanet == planetId) {
-		document.getElementById('currentPlanet').className = '';
-		document.getElementById('flyToButtonHider').className = 'hidden';
+		reveal('currentPlanet')
+		hide('flyToButtonHider');
 	} else{
-		document.getElementById('currentPlanet').className = 'hidden';
-		document.getElementById('flyToButtonHider').className = '';
+		hide('currentPlanet')
+		reveal('flyToButtonHider');
 	};
-	document.getElementById('sideBarHider').className = '';
+	reveal('sideBarHider');
 	document.getElementById('flyToButton').onclick = function() {verifyFly(planetId)};
 	document.getElementById('planetIdInfo').innerText = gamestate.planetData[planetId].name;
 	document.getElementById('infoReputation').innerText = gamestate.playerData.reputation[planetId];
@@ -53,12 +61,12 @@ function updateInventory() {
 }
 
 function showNotification(message) {
-	document.getElementById('notificationsHider').className = '';
+	reveal('notificationsHider');
 	document.getElementById('notificationMessage').innerText = message;
 }
 
 function hideNotification() {
-	document.getElementById('notificationsHider').className = 'hidden';
+	hide('notificationsHider');
 }
 
 function loadPlanetInterface() {
