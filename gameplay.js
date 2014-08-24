@@ -53,7 +53,7 @@ function generateSupply(planet){
 }
 
 gamestate.playerData = {reputation:[0,0,0,0,0,0]};
-gamestate.playerData.inventory = {};
+gamestate.playerData.inventory = {"credits":1000};
 gamestate.playerData.ship = {engine:{},cargobay:{}};
 
 function jump(to,from){

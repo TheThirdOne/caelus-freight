@@ -23,3 +23,14 @@ function clickInfo(planetId) {
 	document.getElementById('planetIdInfo').innerText = gamestate.planetData[planetId].name;
 	document.getElementById('infoReputation').innerText = gamestate.playerData.reputation[planetId];
 }
+
+function updateInventory() {
+	document.getElementsByClassName('inventory').innerHTML = '';
+	for (var item in gamestate.playerData.inventory) {
+		if (gamestate.playerData.inventory[item] != 0 ) {
+			var div = document.createElement('div');
+			div.innerHTML = item + " x" + gamestate.playerData.inventory[item];
+			document.getElementsByClassName('inventory')[0].appendChild(div);
+		};
+	};
+}
