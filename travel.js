@@ -7,12 +7,28 @@ function getPlanetAngle(planet,offset){
 }
 function getPlanetLoc(planet,offset){
   var angle = getPlanetAngle(planet,offset);
-  var x = Math.cos(angle)*dists[planet];
-  var y = Math.cos(angle)*dists[planet];
+  var x = Math.cos(angle)*dists[planet]/2;
+  var y = Math.sin(angle)*dists[planet]/2;
   return [x,y]
 }
 
-//todo toDomLoc function
+function getShipLoc(){
+  var a = document.getElementById('container');
+  var style = window.getComputedStyle(a);
+  return [Number.parseInt(style.width),Number.parseInt(style.height)];
+}
+function toDOMLoc(loc){
+  
+  var out = [];
+  var a = document.getElementsByClassName('map')[0];
+  var style = window.getComputedStyle(a);
+  console.log(loc[1],loc[0])
+  console.log(style.height,style.width)
+  out[0] = loc[0]+Number.parseInt(style.width)/2;
+  out[1] = -loc[1]+Number.parseInt(style.height)/2;
+  console.log(out[1],out[0])
+  return out;
+}
 
 function findKeyframesRule(rule){
 //credit: https://gitorious.org/webkit/webkit/source/438fd0b118bd9c2c82b6ab23956447be9c24f136:LayoutTests/animations/change-keyframes.html#Lundefined
