@@ -3,7 +3,7 @@ var times = [5,    15,  25,  50, 100, 200];
 var dists = [120, 190, 275, 440, 540, 620];
 function getPlanetAngle(planet,offset){
   var now = (new Date()).getTime()+(offset||0)-beginning;
-  return (now/1000 % times[planet])/times[planet]*2*Math.PI;
+  return (now/1000 % times[planet])/times[planet]*-2*Math.PI + Math.PI/2;
 }
 function getPlanetLoc(planet,offset){
   var angle = getPlanetAngle(planet,offset);
