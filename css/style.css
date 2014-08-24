@@ -2,9 +2,11 @@
   -webkit-animation-duration: 7s;
   -webkit-animation-name: fly;
   -webkit-animation-fill-mode: forwards;
+  -webkit-animation-timing-function: linear;
   position: absolute;
   left: 500px;
   top:50px;
+
 }
 /*.planet{
   height:100px;

@@ -1,5 +1,5 @@
 var beginning = (new Date()).getTime();
-var times = [5,    15,  25,  50, 100, 200];
+var times = [ 10,  30,  50, 100, 200, 400];
 var dists = [120, 190, 275, 440, 540, 620];
 function getPlanetAngle(planet,offset){
   var now = (new Date()).getTime()+(offset||0)-beginning;
@@ -16,6 +16,15 @@ function flyBetweenPlanets(to,from){
   var a = document.getElementById('container');
   var style = window.getComputedStyle(a);
   generateAnimation(toDOMLoc(getPlanetLoc(to,Number.parseInt(style.webkitAnimationDuration)*1000)),toDOMLoc(getPlanetLoc(from)),0);
+}
+
+function fly(to,from){
+  var locs = [toDOMLoc(getPlanetLoc(to,7000)),toDOMLoc(getPlanetLoc(from))];
+  var d = Math.sqrt((locs[0][0]-locs[1][0])*(locs[0][0]-locs[1][0])+(locs[0][1]-locs[1][1])*(locs[0][1]-locs[1][1])); //distance
+  var style = document.getElementById('container').style;
+  style.webkitAnimationDuration = ''+((d/20) | 0)+'s';
+  flyBetweenPlanets(to,from);
+  return d;
 }
 
 function toDOMLoc(loc){
@@ -49,9 +58,9 @@ function generateAnimation(to,from,startAngle){
   var toLoc = "top:"+to[1] + "px;left:" + to[0] + "px;";
   var keyframes = findKeyframesRule('fly');
   keyframes.deleteRule("from");
-  keyframes.deleteRule("20%");
-  keyframes.deleteRule("50%");
-  keyframes.deleteRule("80%");
+  keyframes.deleteRule("10%");
+  keyframes.deleteRule("30%");
+  keyframes.deleteRule("90%");
   keyframes.deleteRule("to");
   
   keyframes.insertRule(
@@ -64,14 +73,14 @@ function generateAnimation(to,from,startAngle){
     }");
     
   keyframes.insertRule(
-    "20%{"
+    "10%{"
     + fromRotate +
     "  height:50px;\
       width:50px;\
       margin:-25 0 0 -25;\
     }");
   keyframes.insertRule(
-    "50%{"
+    "30%{"
     + toRotate
     + fromLoc +
     " height:50px; \
@@ -79,7 +88,7 @@ function generateAnimation(to,from,startAngle){
       margin:-25 0 0 -25;\
     }");
   keyframes.insertRule(
-    "80%{"
+    "90%{"
     + toLoc +
     " height:50px;\
       width:50px;\
