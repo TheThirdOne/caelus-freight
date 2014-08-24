@@ -100,7 +100,14 @@ function generateAnimation(to,from,startAngle){
 }
 
 function start(){
-  var a = document.getElementById('container').style;
-  a.webkitAnimationName = 'fly';
-  a.display = 'initial';
+  var a = document.getElementById('container');
+  var style = a.style;
+  style.webkitAnimationName = 'fly';
+  style.display = 'initial';
+  a.addEventListener('webkitAnimationEnd',end);
+}
+function end(){
+  var a = document.getElementById('container');
+  var style = a.style;
+  style.display = 'none';
 }
