@@ -1,11 +1,11 @@
 var gamestate = {};
 gamestate.planetData = [];
-gamestate.planetData[0] = {name:"world",technology:0,minerals:0,fuel:0,food:0,antimatter:0,production:0,society:0};
-gamestate.planetData[1] = {name:"world",technology:0,minerals:0,fuel:0,food:0,antimatter:0,production:0,society:0};
-gamestate.planetData[2] = {name:"world",technology:0,minerals:0,fuel:0,food:0,antimatter:0,production:0,society:0};
-gamestate.planetData[3] = {name:"world",technology:0,minerals:0,fuel:0,food:0,antimatter:0,production:0,society:0};
-gamestate.planetData[4] = {name:"world",technology:0,minerals:0,fuel:0,food:0,antimatter:0,production:0,society:0};
-gamestate.planetData[5] = {name:"world",technology:0,minerals:0,fuel:0,food:0,antimatter:0,production:0,society:0};
+gamestate.planetData[0] = {name:"Earth"  ,technology:0,minerals:0,fuel:0,food:0,antimatter:0,production:0,population:0,society:0};
+gamestate.planetData[1] = {name:"Mars"   ,technology:0,minerals:0,fuel:0,food:0,antimatter:0,production:0,population:0,society:0};
+gamestate.planetData[2] = {name:"Jupiter",technology:0,minerals:0,fuel:0,food:0,antimatter:0,production:0,population:0,society:0};
+gamestate.planetData[3] = {name:"Saturn" ,technology:0,minerals:0,fuel:0,food:0,antimatter:0,production:0,population:0,society:0};
+gamestate.planetData[4] = {name:"Uranus" ,technology:0,minerals:0,fuel:0,food:0,antimatter:0,production:0,population:0,society:0};
+gamestate.planetData[5] = {name:"Neptune",technology:0,minerals:0,fuel:0,food:0,antimatter:0,production:0,population:0,society:0};
 gamestate.currentPlanet = 0;
 gamestate.costCache = [];
 
@@ -39,27 +39,32 @@ function timeStep(){
 }
 
 function generateCosts(planet){
-
+  var out = {};
+  for(var item in itemConfig){
+    out[item] = itemConfig[item](gamestate.planetData[planet]); //returns [supply, demand]
+    out[item] = out[item][1]/out[item][0];
+  }
+  return out;
 }
 
-function generateDemand(planet){
 
-
-}
-
-function generateSupply(planet){
-
-
-}
+var itemConfig =
+{
+  computers:function(traits){return [traits.production*traits.technology,traits.population/traits.minerals]},
+  fuel:function(traits){return [traits.production*traits.fuel,traits.population/traits.technology]}
+};
 
 gamestate.playerData = {reputation:[0,0,0,0,0,0]};
 gamestate.playerData.inventory = {"credits":1000};
 gamestate.playerData.ship = {engine:{},cargobay:{}};
 
-function jump(to,from){
-  
-  //getDistance
-  //calculate fuel cost
-  //subtract money
-  fly(to,from);
+function jump(to){
+  var d = getDistance(to,gamestate.currentPlanet);
+  var cost = ((d/30) | 0);
+  if(gamestate.playerData.inventory.fuel - cost >= 0){
+    gamestate.playerData.inventory.fuel -= cost;
+    fly(to,gamestate.currentPlanet);
+    onLeave();
+    gamestate.currentPlanet = to;
+  }
 }
