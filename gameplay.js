@@ -63,7 +63,7 @@ function jump(to){
   var cost = ((d/30) | 0);
   if(gamestate.playerData.inventory.fuel - cost >= 0){
     gamestate.playerData.inventory.fuel -= cost;
-    fly(to,from);
+    fly(to,gamestate.currentPlanet);
     onLeave();
     gamestate.currentPlanet = to;
   }
