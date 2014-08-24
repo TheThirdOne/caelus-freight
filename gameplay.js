@@ -12,13 +12,11 @@ gamestate.costCache = [];
 function onStart(){
   //random gen gamestate.planetData
   //gen player stats
-  updateInventory();
   onArrive();
 }
 function onLoadGame(){
   //Load gamestate.planetData
   //load player stats
-  updateInventory();
   onArrive();
 }
 function onArrive(){
@@ -59,7 +57,7 @@ var itemConfig =
 };
 
 gamestate.playerData = {reputation:[0,0,0,0,0,0]};
-gamestate.playerData.inventory = {"credits":1000};
+gamestate.playerData.inventory = {"credits":1000,"fuel":1000};
 gamestate.playerData.ship = {engine:{},cargobay:{}};
 
 function jump(to){

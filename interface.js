@@ -58,6 +58,11 @@ function updateInventory() {
 			document.getElementsByClassName('inventory')[0].appendChild(div);
 		};
 	};
+	if (document.getElementsByClassName('inventory')[0].innerText == '') {
+		var div = document.createElement('div');
+		div.innerHTML = "You have no stuff, you existentialist";
+		document.getElementsByClassName('inventory')[0].appendChild(div);
+	};
 }
 
 function showNotification(message) {
