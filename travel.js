@@ -12,47 +12,82 @@ function getPlanetLoc(planet,offset){
   return [x,y]
 }
 
+//todo toDomLoc function
 
-generateAnimation(to,from,startAngle){
-  var angle = Math.atan2(to[0]-from[0],to[1]-from[0])/Math.PI*180;
+function findKeyframesRule(rule){
+//credit: https://gitorious.org/webkit/webkit/source/438fd0b118bd9c2c82b6ab23956447be9c24f136:LayoutTests/animations/change-keyframes.html#Lundefined
+    var ss = document.styleSheets;
+    for (var i = 0; i < ss.length; ++i) {
+      if(ss[i].cssRules)
+        for (var j = 0; j < ss[i].cssRules.length; ++j) {
+            if (ss[i].cssRules[j].type == window.CSSRule.WEBKIT_KEYFRAMES_RULE && ss[i].cssRules[j].name == rule)
+                return ss[i].cssRules[j];
+        }
+    }
+    
+    return null;
+}
+
+function generateAnimation(to,from,startAngle){
+  var angle = Math.atan2(to[0]-from[0],from[0]-to[1])/Math.PI*180; //y is negated cus we are using top:
   var fromRotate = "transform: rotate(" + startAngle +"deg);";
   var toRotate = "transform: rotate(" + angle +"deg);";
-  //todo toLoc from Loc
-  var animation = "@-webkit-keyframes fly{\
-    from{"
+  var fromLoc = "top:"+from[1] + "px;left:" + from[0] + "px;";
+  var toLoc = "top:"+to[1] + "px;left:" + to[0] + "px;";
+  var keyframes = findKeyframesRule('fly')
+  keyframes.deleteRule("from");
+  keyframes.deleteRule("20%");
+  keyframes.deleteRule("50%");
+  keyframes.deleteRule("80%");
+  keyframes.deleteRule("to");
+  
+  keyframes.insertRule(
+    "from{"
     + fromRotate
     + fromLoc +
     " height:10px;\
       width:10px;\
       margin:-5 0 0 -5;\
-    }\
-    20%{"
+    }");
+    
+  keyframes.insertRule(
+    "20%{"
     + fromRotate +
     "  height:50px;\
       width:50px;\
       margin:-25 0 0 -25;\
-    }\
-    50%{"
+    }");
+  keyframes.insertRule(
+    "50%{"
     + toRotate
     + fromLoc +
     " height:50px; \
       width:50px;\
       margin:-25 0 0 -25;\
-    }\
-    80%{"
+    }");
+  keyframes.insertRule(
+    "80%{"
     + toLoc +
     " height:50px;\
       width:50px;\
       margin:-50 0 0 0;\
-    }\
-    to{"
+    }");
+  keyframes.insertRule(
+    "to{"
     + toRotate
     + toLoc +
     " height:10px;\
       width:10px;\
       margin:-5 0 0 -5;\
-    }\
-  }";
-  //todo put animation in css
-  //todo assign animation to sprite
+    }");
+  var a = document.getElementById('container').style;
+  a.display = "none";
+  a.webkitAnimationName = 'none';
+  setTimeout(start, 10);
+}
+
+function start(){
+  var a = document.getElementById('container').style;
+  a.webkitAnimationName = 'fly';
+  a.display = 'initial';
 }
