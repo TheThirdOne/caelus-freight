@@ -122,4 +122,5 @@ function end(){
   var a = document.getElementById('container');
   var style = a.style;
   style.display = 'none';
+  onArrive();
 }
