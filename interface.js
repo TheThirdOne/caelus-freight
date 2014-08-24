@@ -12,9 +12,12 @@ function hideInfo() {
 
 function verifyFly(planetId) {
 	document.getElementById('verifyFlyHider').className = '';
-	console.log(planetId);
-	document.getElementById('planetId').innerText = planetId;
+	document.getElementById('planetId').innerText = gamestate.planetData[planetId].name;
 	//fly(planetId, currentPlanet);
+}
+
+function hideVerifyFly() {
+	document.getElementById('verifyFlyHider').className = 'hidden';
 }
 
 function clickInfo(planetId) {
