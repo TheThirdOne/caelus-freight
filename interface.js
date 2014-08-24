@@ -25,7 +25,7 @@ function clickInfo(planetId) {
 }
 
 function updateInventory() {
-	document.getElementsByClassName('inventory').innerHTML = '';
+	document.getElementsByClassName('inventory')[0].innerHTML = '';
 	for (var item in gamestate.playerData.inventory) {
 		if (gamestate.playerData.inventory[item] != 0 ) {
 			var div = document.createElement('div');
