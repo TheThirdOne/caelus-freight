@@ -1,4 +1,4 @@
-var beginning = (new Date()).getTime()
+var beginning = (new Date()).getTime();
 var times = [5,    15,  25,  50, 100, 200];
 var dists = [120, 190, 275, 440, 540, 620];
 function getPlanetAngle(planet,offset){
@@ -9,24 +9,21 @@ function getPlanetLoc(planet,offset){
   var angle = getPlanetAngle(planet,offset);
   var x = Math.cos(angle)*dists[planet]/2;
   var y = Math.sin(angle)*dists[planet]/2;
-  return [x,y]
+  return [x,y];
 }
 
-function getShipLoc(){
+function flyBetweenPlanets(to,from){
   var a = document.getElementById('container');
   var style = window.getComputedStyle(a);
-  return [Number.parseInt(style.width),Number.parseInt(style.height)];
+  generateAnimation(toDOMLoc(getPlanetLoc(to,Number.parseInt(style.webkitAnimationDuration)*1000)),toDOMLoc(getPlanetLoc(from)),0);
 }
+
 function toDOMLoc(loc){
-  
   var out = [];
   var a = document.getElementsByClassName('map')[0];
   var style = window.getComputedStyle(a);
-  console.log(loc[1],loc[0])
-  console.log(style.height,style.width)
   out[0] = loc[0]+Number.parseInt(style.width)/2;
   out[1] = -loc[1]+Number.parseInt(style.height)/2;
-  console.log(out[1],out[0])
   return out;
 }
 
@@ -45,12 +42,12 @@ function findKeyframesRule(rule){
 }
 
 function generateAnimation(to,from,startAngle){
-  var angle = Math.atan2(to[0]-from[0],from[0]-to[1])/Math.PI*180; //y is negated cus we are using top:
+  var angle = Math.atan2(to[0]-from[0],from[1]-to[1])/Math.PI*180;  //y is negated cus we are using top:
   var fromRotate = "transform: rotate(" + startAngle +"deg);";
   var toRotate = "transform: rotate(" + angle +"deg);";
   var fromLoc = "top:"+from[1] + "px;left:" + from[0] + "px;";
   var toLoc = "top:"+to[1] + "px;left:" + to[0] + "px;";
-  var keyframes = findKeyframesRule('fly')
+  var keyframes = findKeyframesRule('fly');
   keyframes.deleteRule("from");
   keyframes.deleteRule("20%");
   keyframes.deleteRule("50%");
