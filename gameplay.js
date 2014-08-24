@@ -1,11 +1,11 @@
 var gamestate = {};
 gamestate.planetData = [];
-gamestate.planetData[0] = {name:"world",technology:0,minerals:0,fuel:0,food:0,antimatter:0,production:0,society:0};
-gamestate.planetData[1] = {name:"world",technology:0,minerals:0,fuel:0,food:0,antimatter:0,production:0,society:0};
-gamestate.planetData[2] = {name:"world",technology:0,minerals:0,fuel:0,food:0,antimatter:0,production:0,society:0};
-gamestate.planetData[3] = {name:"world",technology:0,minerals:0,fuel:0,food:0,antimatter:0,production:0,society:0};
-gamestate.planetData[4] = {name:"world",technology:0,minerals:0,fuel:0,food:0,antimatter:0,production:0,society:0};
-gamestate.planetData[5] = {name:"world",technology:0,minerals:0,fuel:0,food:0,antimatter:0,production:0,society:0};
+gamestate.planetData[0] = {name:"world",technology:0,minerals:0,fuel:0,food:0,antimatter:0,production:0,population:0,society:0};
+gamestate.planetData[1] = {name:"world",technology:0,minerals:0,fuel:0,food:0,antimatter:0,production:0,population:0,society:0};
+gamestate.planetData[2] = {name:"world",technology:0,minerals:0,fuel:0,food:0,antimatter:0,production:0,population:0,society:0};
+gamestate.planetData[3] = {name:"world",technology:0,minerals:0,fuel:0,food:0,antimatter:0,production:0,population:0,society:0};
+gamestate.planetData[4] = {name:"world",technology:0,minerals:0,fuel:0,food:0,antimatter:0,production:0,population:0,society:0};
+gamestate.planetData[5] = {name:"world",technology:0,minerals:0,fuel:0,food:0,antimatter:0,production:0,population:0,society:0};
 gamestate.currentPlanet = 0;
 gamestate.costCache = [];
 
@@ -39,18 +39,20 @@ function timeStep(){
 }
 
 function generateCosts(planet){
-
+  var out = {};
+  for(var item in itemConfig){
+    out[item] = itemConfig[item](gamestate.planetData[planet]); //returns [supply, demand]
+    out[item] = out[item][1]/out[item][0];
+  }
+  return out;
 }
 
-function generateDemand(planet){
 
-
-}
-
-function generateSupply(planet){
-
-
-}
+var itemConfig =
+{
+  computers:function(traits){return [traits.production*traits.technology,traits.population/traits.minerals]},
+  fuel:function(traits){return [traits.production*traits.fuel,traits.population/traits.technology]}
+};
 
 gamestate.playerData = {reputation:[0,0,0,0,0,0]};
 gamestate.playerData.inventory = {};
