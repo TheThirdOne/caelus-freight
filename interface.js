@@ -5,9 +5,11 @@ function toggleOptions() {
 		document.getElementById('optionsHider').className = '';
 	};
 }
-
+function hideInfo() {
+	document.getElementById('sideBarHider').className = 'hidden';
+}
 function clickInfo(planetId) {
-	console.log(planetId);
+	document.getElementById('sideBarHider').className = '';
 	document.getElementById('planetIdInfo').innerText = planetId;
 	document.getElementById('flyToButton').onclick = function() {verifyFly(planetId)};
 }
