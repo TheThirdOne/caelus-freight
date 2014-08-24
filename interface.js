@@ -15,7 +15,6 @@ function hideInfo() {
 function verifyFly(planetId) {
 	document.getElementById('verifyFlyHider').className = '';
 	document.getElementById('planetId').innerText = gamestate.planetData[planetId].name;
-	//fly(planetId, currentPlanet);
 }
 
 function hideVerifyFly() {
@@ -28,7 +27,14 @@ function verifyFlySuccess() {
 }
 
 function clickInfo(planetId) {
-  selectedPlanet = planetId;
+	selectedPlanet = planetId;
+	if (gamestate.currentPlanet == planetId) {
+		document.getElementById('currentPlanet').className = '';
+		document.getElementById('flyToButtonHider').className = 'hidden';
+	} else{
+		document.getElementById('currentPlanet').className = 'hidden';
+		document.getElementById('flyToButtonHider').className = '';
+	};
 	document.getElementById('sideBarHider').className = '';
 	document.getElementById('flyToButton').onclick = function() {verifyFly(planetId)};
 	document.getElementById('planetIdInfo').innerText = gamestate.planetData[planetId].name;
@@ -38,7 +44,7 @@ function clickInfo(planetId) {
 function updateInventory() {
 	document.getElementsByClassName('inventory')[0].innerHTML = '';
 	for (var item in gamestate.playerData.inventory) {
-		if (gamestate.playerData.inventory[item] != 0 ) {
+		if (gamestate.playerData.inventory[item] != 0 && item != 'credits') {
 			var div = document.createElement('div');
 			div.innerHTML = item + " x" + gamestate.playerData.inventory[item];
 			document.getElementsByClassName('inventory')[0].appendChild(div);

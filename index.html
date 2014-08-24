@@ -146,12 +146,15 @@
       <div id="sideBarHider" class="hidden">
         <div class="sideBar panel">
           <h1><span id="planetIdInfo"></span></h1>
-          <h1 id="flyToButton" class="panel clickable success">Fly to</h1>
+          <p id="currentPlanet" class="hidden">(Current Planet)</p>
+          <div id="flyToButtonHider" class="hidden">
+            <h1 id="flyToButton" class="panel clickable success">Fly to</h1>
+          </div>
           <h4>Reputation: <span id="infoReputation"></span></h4>
         </div>
       </div>
       <div class="bottomBar panel">
-        <table>
+        <!--<table>
           <tr>
             <td><h2 class="panel clickable success">Success</h2></td>
             <td><h2 class="panel clickable disabled">Disabled</h2></td>
@@ -162,7 +165,14 @@
             <td><h2 class="panel clickable">Option</h2></td>
             <td><h2 class="panel clickable">Option</h2></td>
           </tr>
-        </table>
+        </table>-->
+        <br>
+        <div class="stats panel">
+          <p>Credits: <span></span></p>
+          <p>Ship Weight: <span></span></p>
+          <p>Total Playtime: <span></span></p>
+        </div>
+        <br>
         <div class="inventory panel">
         </div>
         <br>
