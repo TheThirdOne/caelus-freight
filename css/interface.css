@@ -61,7 +61,7 @@
 	margin: .25em;
 }
 table {
-	width: 100%;
+	width: 85%;
 }
 td {
 	height: 3em;
@@ -110,4 +110,13 @@ td .clickable {
 	width: 50%;
 	z-index: 10;
 	overflow: hidden;
+}
+.inventory {
+	overflow: auto;
+	width: 15%;
+	height: 15%;
+	display: inline;	
+	position: fixed;
+	bottom: 0%;
+	right: 0%;
 }

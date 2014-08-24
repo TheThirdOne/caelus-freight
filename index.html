@@ -139,7 +139,7 @@
       <a href="https://github.com/TheThirdOne/caelus-freight" class="logo"></a>
       <div id="sideBarHider" class="hidden">
         <div class="sideBar panel">
-          <h2>PlanetID: <span id="planetIdInfo"></span></h2>
+          <h1><span id="planetIdInfo"></span></h1>
           <h1 id="flyToButton" class="panel clickable success">Fly to</h1>
           <h4>Reputation: <span id="infoReputation"></span></h4>
           <h4>Produces: <span id="infoProduces"></span></h4>
@@ -151,27 +151,30 @@
             <td><h2 class="panel clickable success">Success</h2></td>
             <td><h2 class="panel clickable disabled">Disabled</h2></td>
             <td><h2 class="panel clickable alert" onclick="generateAnimation(toDOMLoc(getPlanetLoc(3,7000)),toDOMLoc(getPlanetLoc(5)),0)">Alert!</h2></td>
+          </tr>
+          <tr>
             <td><h2 class="panel clickable info">Info</h2></td>
             <td><h2 class="panel clickable">Option</h2></td>
             <td><h2 class="panel clickable">Option</h2></td>
           </tr>
-          <tr>
-            <td><h2 class="panel clickable">Option</h2></td>
-            <td><h2 class="panel clickable">Option</h2></td>
-            <td><h2 class="panel clickable">Option</h2></td>
-            <td><h2 class="panel clickable">Option</h2></td>
-            <td><h2 class="panel clickable">Option</h2></td>
-            <td><h2 class="panel clickable">Option</h2></td>
-          </tr>
         </table>
-
+        <div class="inventory panel">
+          <ul>
+            <li>test</li>
+            <li>test</li>
+            <li>test</li>
+            <li>test</li>
+            <li>test</li>
+            <li>test</li>
+          </ul>
+        </div>
         <br>
         <p class="panel clickable" id="optionsToggle" onClick="toggleOptions();">Options</p>
         <a class="panel clickable" href="http://www.ludumdare.com/">Ludem Dare?</a>
       </div>
       <div id="verifyFlyHider" class="hidden">
         <div id="verifyFlyMenu" class="panel">
-          <h1>Are you sure you want to fly to Planet ID: <span id="planetId"></span>?</h1>
+          <h1>Are you sure you want to fly to Planet: <span id="planetId"></span>?</h1>
           <hr>
           <h1 class="panel clickable success">Yes!</h1>
         </div>
