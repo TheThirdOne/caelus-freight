@@ -149,7 +149,7 @@
           <tr>
             <td><h2 class="panel clickable success">Success</h2></td>
             <td><h2 class="panel clickable disabled">Disabled</h2></td>
-            <td><h2 class="panel clickable alert" onclick="generateAnimation(toDOMLoc(getPlanetLoc(3,7000)),toDOMLoc(getPlanetLoc(5)),0)">Alert!</h2></td>
+            <td><h2 class="panel clickable alert" onclick="">Alert!</h2></td>
           </tr>
           <tr>
             <td><h2 class="panel clickable info" onClick="updateInventory();">Info</h2></td>
@@ -167,8 +167,9 @@
         <div id="verifyFlyMenu" class="panel">
           <h1>Are you sure you want to fly to <span id="planetId"></span>?</h1>
           <hr>
-          <h1 class="panel clickable success">Yes!</h1>
-          <h1 class="panel clickable" onClick="hideVerifyFly()">Cancel</h1>
+          <h1 class="panel clickable success" onClick="verifyFlySuccess()">Yes!</h1>
+          <br>
+          <h1 class="panel clickable success" onClick="hideVerifyFly()">Cancel</h1>
         </div>
       </div>
       <div id="notificationsHider" class="hidden" onClick="hideNotification();">

@@ -66,6 +66,8 @@ function jump(to){
     fly(to,gamestate.currentPlanet);
     onLeave();
     gamestate.currentPlanet = to;
+  }else{
+    showNotification('You do not have enough fuel to complete the journey');
   }
 }
 
