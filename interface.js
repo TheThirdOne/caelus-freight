@@ -32,7 +32,7 @@ function hideVerifyFly() {
 function verifyFlySuccess() {
 	hideVerifyFly();
 	if (animating) {
-		notificationMessage('Wait until the current flight is over!')
+		showNotification('Wait until the current flight is over!')
 	} else{
 		jump(selectedPlanet);
 	};
@@ -47,10 +47,11 @@ function clickInfo(planetId) {
 		hide('currentPlanet');
 		reveal('flyToButtonHider');
 		document.getElementById('flyToButton').onclick = function() {verifyFly(planetId)};
+		document.getElementById('trade').innerHTML = '';
 		for (var item in gamestate.costCache) {
 			var div = document.createElement('div');
 			div.innerHTML = item;
-			document.getElementsById('trade').appendChild(div);
+			document.getElementById('trade').appendChild(div);
 		}
 	};
 	reveal('sideBarHider');
