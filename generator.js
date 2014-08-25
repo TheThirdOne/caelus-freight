@@ -21,11 +21,11 @@ function toggleStars() {
 }
 
 function resetAsteroids() {
-  document.getElementsByClassName('trackAsteroids')[0].innerHTML = document.getElementsByClassName('trackAsteroids')[0].childNodes[1].outerHTML; 
+  document.getElementsByClassName('trackAsteroids')[0].innerHTML = document.getElementsByClassName('trackAsteroids')[0].childNodes[1].outerHTML;
 }
 
 function resetStars() {
-  document.getElementById('starsContainer').innerHTML = document.getElementById('starsContainer').childNodes[1].outerHTML; 
+  document.getElementById('starsContainer').innerHTML = document.getElementById('starsContainer').childNodes[1].outerHTML;
 }
 
 function generateAsteroids(){
@@ -46,11 +46,11 @@ function generateAsteroids(){
 function generateStars(container){
   var a = document.getElementById('starsContainer');
   var b = a.childNodes[0];
-
+  var width = document.getElementById('starsContainer').clientWidth;
   for(var i = 0;i < 720; i++){
     var c = b.cloneNode();
-    var d = Math.floor(Math.random()* document.getElementById('starsContainer').clientWidth);
-    var e = Math.floor(Math.random()* document.getElementById('starsContainer').clientWidth);
+    var d = Math.floor(Math.random()* width);
+    var e = Math.floor(Math.random()* width);
     c.style.left = (d);
     c.style.top = (e);
     a.appendChild(c);
