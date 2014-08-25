@@ -10,6 +10,13 @@ gamestate.currentPlanet = 0;
 gamestate.costCache = [];
 gamestate.supplyCache = [];
 
+function pageLoad() {
+  //Anything to run at onLoad of page
+  updateInventory(); 
+  toggleStars(); 
+  toggleAsteroids();
+}
+
 function onStart(){
   
   onArrive();
@@ -32,9 +39,6 @@ function saveGame(name){
 
 
 function onArrive(){
-  timeStep();
-  gamestate.costCache = generateCosts(gamestate.currentPlanet);
-  
   var a = document.getElementById(gamestate.planetData[gamestate.currentPlanet].name);
   a.className = "track currentTrack";
   loadPlanetInterface(gamestate.currentPlanet);
@@ -47,6 +51,8 @@ function onLeave(to){
   hideInfo();
   updateInventory()
   gamestate.currentPlanet = to;
+  timeStep();
+  gamestate.costCache = generateCosts(gamestate.currentPlanet);
 }
 
 function generateWorlds(){
@@ -107,12 +113,9 @@ function jump(to){
     showNotification('You do not have enough fuel to complete the journey');
   }
 }
-function test (test) {
-  console.log(gamestate.playerData.inventory[test])
-}
+
 function transaction(itemName,itemQuantity) {
   // item quantity + inventory quantity >= 0 && player credits + (itemQuantity * item cost on planet) >= 0
-  console.log(gamestate.playerData.inventory[itemName])
   if (itemQuantity + (gamestate.playerData.inventory[itemName] || 0) >= 0 && gamestate.playerData.inventory.credits + (itemQuantity * gamestate.costCache[itemName]) >= 0 ) {
     gamestate.playerData.inventory[itemName] = itemQuantity + (gamestate.playerData.inventory[itemName]||0);
     gamestate.playerData.inventory.credits -= (itemQuantity * gamestate.costCache[itemName]);
@@ -120,4 +123,5 @@ function transaction(itemName,itemQuantity) {
   } else{
     showNotification("You cannot afford this transaction");
   };
+  updateTransactionList()
 }

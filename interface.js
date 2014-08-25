@@ -43,36 +43,40 @@ function clickInfo(planetId) {
 	if (gamestate.currentPlanet == planetId) {
 		reveal('currentPlanet');
 		hide('flyToButtonHider');
+		updateTransactionList()
 	} else{
 		hide('currentPlanet');
 		reveal('flyToButtonHider');
 		document.getElementById('flyToButton').onclick = function() {verifyFly(planetId)};
-		document.getElementById('purchase').innerHTML = '';
-		for (var item in gamestate.costCache) {
-			var div = document.createElement('div');
-			div.className = 'panel transactable';
-			div.onclick = function(item){ return function() {
-					transaction(item,1);
-				}}(item);
-			div.innerHTML = item;
-			document.getElementById('purchase').appendChild(div);
-		}
-		document.getElementById('sell').innerHTML = '';
-		for (var item in gamestate.playerData.inventory) {
-			if (item != 'credits') {
-				var div = document.createElement('div');
-				div.className = 'panel transactable';
-				div.onclick = function() {
-					transaction(item,-1);
-				}
-				div.innerHTML = item;
-				document.getElementById('sell').appendChild(div);
-			};
-		}
 	};
 	reveal('sideBarHider');
 	document.getElementById('planetIdInfo').innerText = gamestate.planetData[planetId].name;
 	document.getElementById('infoReputation').innerText = gamestate.playerData.reputation[planetId];
+}
+
+function updateTransactionList() {
+	document.getElementById('purchase').innerHTML = '';
+	for (var item in gamestate.costCache) {
+		var div = document.createElement('div');
+		div.className = 'panel transactable';
+		div.onclick = function(item){ return function() {
+				transaction(item,1);
+			}}(item);
+		div.innerHTML = item;
+		document.getElementById('purchase').appendChild(div);
+	}
+	document.getElementById('sell').innerHTML = '';
+	for (var item in gamestate.playerData.inventory) {
+		if (item != 'credits' && gamestate.playerData.inventory[item] > 0) {
+			var div = document.createElement('div');
+			div.className = 'panel transactable';
+			div.onclick = function() {
+				transaction(item,-1);
+			}
+			div.innerHTML = item;
+			document.getElementById('sell').appendChild(div);
+		};
+	};
 }
 
 function updateInventory() {
