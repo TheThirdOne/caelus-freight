@@ -42,9 +42,9 @@ function clickInfo(planetId) {
 	} else{
 		hide('currentPlanet')
 		reveal('flyToButtonHider');
+		document.getElementById('flyToButton').onclick = function() {verifyFly(planetId)};
 	};
 	reveal('sideBarHider');
-	document.getElementById('flyToButton').onclick = function() {verifyFly(planetId)};
 	document.getElementById('planetIdInfo').innerText = gamestate.planetData[planetId].name;
 	document.getElementById('infoReputation').innerText = gamestate.playerData.reputation[planetId];
 }
