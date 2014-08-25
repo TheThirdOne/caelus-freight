@@ -8,6 +8,7 @@ gamestate.planetData[4] = {name:"Uranus" ,technology:0,minerals:0,fuel:0,food:0,
 gamestate.planetData[5] = {name:"Neptune",technology:0,minerals:0,fuel:0,food:0,antimatter:0,production:0,population:0,society:0};
 gamestate.currentPlanet = 0;
 gamestate.costCache = [];
+gamestate.supplyCache = [];
 
 function onStart(){
   
@@ -52,10 +53,17 @@ function timeStep(){
 }
 
 function generateCosts(planet){
+  var temp;
   var out = {};
+  var cache = {};
   for(var item in itemConfig){
-    out[item] = itemConfig[item](gamestate.planetData[planet]); //returns [supply, demand]
-    out[item] = out[item][1]/out[item][0];
+    temp = itemConfig[item](gamestate.planetData[planet]); //returns [supply, demand]
+    cache[item] = temp;
+    temp = temp[1]/temp[0];
+    if(isNaN(temp) || temp === 0 || temp > 1000000000){
+      continue;
+    }
+    out[item] = temp;
   }
   return out;
 }
@@ -65,6 +73,16 @@ var itemConfig =
 {
   computers:function(traits){return [traits.production*traits.technology,traits.population/traits.minerals]},
   fuel:function(traits){return [traits.production*traits.fuel,traits.population/traits.technology]}
+};
+
+var worldConfig = {
+  population:.1,
+  technology:1.1,
+  fuel:0.1,
+  minerals:0.1,
+  antimatter:0,
+  food: 1,
+  production: 1
 };
 
 gamestate.playerData = {reputation:[0,0,0,0,0,0]};
