@@ -70,9 +70,9 @@ function updateTransactionList() {
 		if (item != 'credits' && gamestate.playerData.inventory[item] > 0) {
 			var div = document.createElement('div');
 			div.className = 'panel transactable';
-			div.onclick = function() {
+			div.onclick = function(item){ return function() {
 				transaction(item,-1);
-			}
+			}}(item);
 			div.innerHTML = item;
 			document.getElementById('sell').appendChild(div);
 		};

@@ -121,7 +121,6 @@ function jump(to){
 }
 
 function transaction(itemName,itemQuantity) {
-  console.log(itemQuantity, '+(', gamestate.playerData.inventory[itemName], '|| 0 ) >= 0 &&', gamestate.playerData.inventory.credits, '+(',itemQuantity,'*',gamestate.costCache[itemName],') >=0')
   // item quantity + inventory quantity >= 0 && player credits + (itemQuantity * item cost on planet) >= 0
   if (itemQuantity + (gamestate.playerData.inventory[itemName] || 0) >= 0 && gamestate.playerData.inventory.credits + (itemQuantity * gamestate.costCache[itemName]) >= 0 ) {
     gamestate.playerData.inventory[itemName] = itemQuantity + (gamestate.playerData.inventory[itemName]||0);
