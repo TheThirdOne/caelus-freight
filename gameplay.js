@@ -113,8 +113,8 @@ function test (test) {
 function transaction(itemName,itemQuantity) {
   // item quantity + inventory quantity >= 0 && player credits + (itemQuantity * item cost on planet) >= 0
   console.log(gamestate.playerData.inventory[itemName])
-  if (itemQuantity + gamestate.playerData.inventory[itemName] >= 0 && gamestate.playerData.inventory.credits + (itemQuantity * gamestate.costCache[itemName]) >= 0 ) {
-    gamestate.playerData.inventory[itemName] += itemQuantity;
+  if (itemQuantity + (gamestate.playerData.inventory[itemName] || 0) >= 0 && gamestate.playerData.inventory.credits + (itemQuantity * gamestate.costCache[itemName]) >= 0 ) {
+    gamestate.playerData.inventory[itemName] = itemQuantity + (gamestate.playerData.inventory[itemName]||0);
     gamestate.playerData.inventory.credits -= (itemQuantity * gamestate.costCache[itemName]);
     updateInventory();
   } else{

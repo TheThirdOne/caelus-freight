@@ -51,9 +51,9 @@ function clickInfo(planetId) {
 		for (var item in gamestate.costCache) {
 			var div = document.createElement('div');
 			div.className = 'panel transactable';
-			div.onclick = function() {
+			div.onclick = function(item){ return function() {
 					transaction(item,1);
-				}
+				}}(item);
 			div.innerHTML = item;
 			document.getElementById('purchase').appendChild(div);
 		}
