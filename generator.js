@@ -46,13 +46,12 @@ function generateAsteroids(){
 function generateStars(container){
   var a = document.getElementById('starsContainer');
   var b = a.childNodes[0];
-  var width = document.getElementById('starsContainer').clientWidth;
   for(var i = 0;i < 720; i++){
     var c = b.cloneNode();
-    var d = Math.floor(Math.random()* width);
-    var e = Math.floor(Math.random()* width);
-    c.style.left = (d);
-    c.style.top = (e);
+    var d = Math.random()*100;
+    var e = Math.random()*100;
+    c.style.left = ''+d+'%';
+    c.style.top =  ''+e+'%';
     a.appendChild(c);
   }
 }

@@ -6,7 +6,7 @@
   /*-webkit-animation: rotate360 12.0s linear infinite;
   animation: rotate360 12.0s linear infinite;*/
 }
-.starscape {
+#starscape {
   background: #282A3A;
   background: -webkit-radial-gradient(center, ellipse cover, rgba(40,42,58,1) 0%, rgba(0,0,0,1) 100%);
   overflow: hidden;
