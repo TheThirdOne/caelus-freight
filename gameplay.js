@@ -115,7 +115,7 @@ function transaction(itemName,itemQuantity) {
   console.log(gamestate.playerData.inventory[itemName])
   if (itemQuantity + gamestate.playerData.inventory[itemName] >= 0 && gamestate.playerData.inventory.credits + (itemQuantity * gamestate.costCache[itemName]) >= 0 ) {
     gamestate.playerData.inventory[itemName] += itemQuantity;
-    gamestate.playerData.inventory.credits += (itemQuantity * gamestate.costCache[itemName]);
+    gamestate.playerData.inventory.credits -= (itemQuantity * gamestate.costCache[itemName]);
     updateInventory();
   } else{
     showNotification("You cannot afford this transaction");
