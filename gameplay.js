@@ -34,13 +34,19 @@ function saveGame(name){
 function onArrive(){
   timeStep();
   gamestate.costCache = generateCosts(gamestate.currentPlanet);
+  
+  var a = document.getElementById(gamestate.planetData[gamestate.currentPlanet].name);
+  a.className = "track currentTrack";
   loadPlanetInterface(gamestate.currentPlanet);
 }
 
-function onLeave(){
+function onLeave(to){
+  var a = document.getElementById(gamestate.planetData[gamestate.currentPlanet].name);
+  a.className = "track";
   clearPlanetInterface();
   hideInfo();
-  updateInventory();
+  updateInventory()
+  gamestate.currentPlanet = to;
 }
 
 function generateWorlds(){
@@ -96,8 +102,7 @@ function jump(to){
   if(gamestate.playerData.inventory.fuel - cost >= 0){
     gamestate.playerData.inventory.fuel -= cost;
     fly(to,gamestate.currentPlanet);
-    gamestate.currentPlanet = to;
-    onLeave();
+    onLeave(to);
   }else{
     showNotification('You do not have enough fuel to complete the journey');
   }
