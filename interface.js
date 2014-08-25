@@ -47,11 +47,21 @@ function clickInfo(planetId) {
 		hide('currentPlanet');
 		reveal('flyToButtonHider');
 		document.getElementById('flyToButton').onclick = function() {verifyFly(planetId)};
-		document.getElementById('trade').innerHTML = '';
+		document.getElementById('purchase').innerHTML = '';
 		for (var item in gamestate.costCache) {
 			var div = document.createElement('div');
+			div.className = 'panel';
 			div.innerHTML = item;
-			document.getElementById('trade').appendChild(div);
+			document.getElementById('purchase').appendChild(div);
+		}
+		document.getElementById('sell').innerHTML = '';
+		for (var item in gamestate.playerData.inventory) {
+			if (item != 'credits') {
+				var div = document.createElement('div');
+				div.className = 'panel';
+				div.innerHTML = item;
+				document.getElementById('sell').appendChild(div);
+			};
 		}
 	};
 	reveal('sideBarHider');
