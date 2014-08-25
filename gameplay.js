@@ -1,11 +1,11 @@
 var gamestate = {};
 gamestate.planetData = [];
-gamestate.planetData[0] = {name:"Earth"  ,technology:0,minerals:0,fuel:0,food:0,antimatter:0,production:0,population:0,society:0};
-gamestate.planetData[1] = {name:"Mars"   ,technology:0,minerals:0,fuel:0,food:0,antimatter:0,production:0,population:0,society:0};
-gamestate.planetData[2] = {name:"Jupiter",technology:0,minerals:0,fuel:0,food:0,antimatter:0,production:0,population:0,society:0};
-gamestate.planetData[3] = {name:"Saturn" ,technology:0,minerals:0,fuel:0,food:0,antimatter:0,production:0,population:0,society:0};
-gamestate.planetData[4] = {name:"Uranus" ,technology:0,minerals:0,fuel:0,food:0,antimatter:0,production:0,population:0,society:0};
-gamestate.planetData[5] = {name:"Neptune",technology:0,minerals:0,fuel:0,food:0,antimatter:0,production:0,population:0,society:0};
+gamestate.planetData[0] = {name:"Earth"  ,technology:1,minerals:1,fuel:1,food:0,antimatter:0,production:1,population:1,society:0};
+gamestate.planetData[1] = {name:"Mars"   ,technology:1,minerals:1,fuel:1,food:0,antimatter:0,production:1,population:1,society:0};
+gamestate.planetData[2] = {name:"Jupiter",technology:1,minerals:1,fuel:1,food:0,antimatter:0,production:1,population:1,society:0};
+gamestate.planetData[3] = {name:"Saturn" ,technology:1,minerals:1,fuel:1,food:0,antimatter:0,production:1,population:1,society:0};
+gamestate.planetData[4] = {name:"Uranus" ,technology:1,minerals:1,fuel:1,food:0,antimatter:0,production:1,population:1,society:0};
+gamestate.planetData[5] = {name:"Neptune",technology:1,minerals:1,fuel:1,food:0,antimatter:0,production:1,population:1,society:0};
 gamestate.currentPlanet = 0;
 gamestate.costCache = [];
 gamestate.supplyCache = [];
@@ -65,6 +65,7 @@ function generateCosts(planet){
     }
     out[item] = temp;
   }
+  gamestate.supplyCache = cache;
   return out;
 }
 
