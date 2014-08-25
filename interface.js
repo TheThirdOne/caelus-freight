@@ -50,9 +50,10 @@ function clickInfo(planetId) {
 }
 
 function updateInventory() {
+	//Update Inventory list in sideBar
 	document.getElementsByClassName('inventory')[0].innerHTML = '';
 	for (var item in gamestate.playerData.inventory) {
-		if (gamestate.playerData.inventory[item] != 0 && item != 'credits') {
+		if (gamestate.playerData.inventory[item] != 0 && item != 'credits' && item != 'fuel') {
 			var div = document.createElement('div');
 			div.innerHTML = item + " x" + gamestate.playerData.inventory[item];
 			document.getElementsByClassName('inventory')[0].appendChild(div);
@@ -63,6 +64,9 @@ function updateInventory() {
 		div.innerHTML = "You have no stuff, you existentialist";
 		document.getElementsByClassName('inventory')[0].appendChild(div);
 	};
+	//Update Credits and Fuel on sideBar
+	document.getElementById('credits').innerText = gamestate.playerData.inventory.credits;
+	document.getElementById('fuel').innerText = gamestate.playerData.inventory.fuel;
 }
 
 function showNotification(message) {
