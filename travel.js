@@ -108,19 +108,22 @@ function generateAnimation(to,from,startAngle){
   var a = document.getElementById('container').style;
   a.display = "none";
   a.webkitAnimationName = 'none';
+  animating = true;
   setTimeout(start, 10);
 }
-
+var animating = false;
 function start(){
   var a = document.getElementById('container');
   var style = a.style;
   style.webkitAnimationName = 'fly';
   style.display = 'initial';
   a.addEventListener('webkitAnimationEnd',end);
+ 
 }
 function end(){
   var a = document.getElementById('container');
   var style = a.style;
   style.display = 'none';
+  animating = false;
   onArrive();
 }
