@@ -43,6 +43,11 @@ function clickInfo(planetId) {
 		hide('currentPlanet')
 		reveal('flyToButtonHider');
 		document.getElementById('flyToButton').onclick = function() {verifyFly(planetId)};
+		for (var item in gamestate.costCache) {
+			var div = document.createElement('div');
+			div.innerHTML = item;
+			document.getElementsById('trade').appendChild(div);
+		}
 	};
 	reveal('sideBarHider');
 	document.getElementById('planetIdInfo').innerText = gamestate.planetData[planetId].name;
