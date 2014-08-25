@@ -12,11 +12,10 @@ gamestate.supplyCache = [];
 
 function pageLoad() {
   //Anything to run at onLoad of page
-  updateInventory(); 
-  toggleStars(); 
+  
+  toggleStars();
   toggleAsteroids();
-  updateTransactionList();
-  setCosts();
+  onArrive();
   showEvent('Ready to start playing? Have fun out there!', 'BlueMars.png', 'Caelus-logoShadow.png', '');
 }
 
@@ -44,6 +43,8 @@ function saveGame(name){
 function onArrive(){
   var a = document.getElementById(gamestate.planetData[gamestate.currentPlanet].name);
   a.className = "track currentTrack";
+  timeStep();
+  setCosts();
   loadPlanetInterface(gamestate.currentPlanet);
 }
 
@@ -51,11 +52,7 @@ function onLeave(to){
   var a = document.getElementById(gamestate.planetData[gamestate.currentPlanet].name);
   a.className = "track";
   clearPlanetInterface();
-  hideInfo();
-  updateInventory()
   gamestate.currentPlanet = to;
-  timeStep();
-  setCosts();
 }
 
 function setCosts() {

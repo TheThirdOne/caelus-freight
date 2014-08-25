@@ -67,7 +67,7 @@ function updateTransactionList() {
 	}
 	document.getElementById('sell').innerHTML = '';
 	for (var item in gamestate.playerData.inventory) {
-		if (item != 'credits' && gamestate.playerData.inventory[item] > 0) {
+		if (item != 'credits' && gamestate.playerData.inventory[item] > 0 && gamestate.costCache[item]) {
 			var div = document.createElement('div');
 			div.className = 'panel transactable';
 			div.onclick = function(item){ return function() {
@@ -108,10 +108,12 @@ function hideNotification() {
 	hide('notificationsHider');
 }
 
-function loadPlanetInterface() {
-	
+function loadPlanetInterface(planet) {
+	updateInventory();
+	updateTransactionList();
+	clickInfo(planet)
 }
 
 function clearPlanetInterface() {
-	
+	hideInfo();
 }
