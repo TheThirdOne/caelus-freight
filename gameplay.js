@@ -134,6 +134,18 @@ function transaction(itemName,itemQuantity) {
 
 function randomEvent(chance) {
   if ((Math.random()*1000) >= chance) {
-    
+    showEvent();
   };
+}
+
+function showEvent(message, background, foreground, effect) {
+  reveal('eventsHider');
+  document.getElementById('eventMessage').innerText = message;
+  document.getElementById('eventImage').style.backgroundImage = ' url(./img/' + background + ')';
+  document.getElementById('eventImage').src = ' ./img/' + foreground;
+  console.log(effect);
+}
+
+function hideEvent() {
+  hide('eventsHider');
 }
