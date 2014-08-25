@@ -31,16 +31,20 @@ function hideVerifyFly() {
 
 function verifyFlySuccess() {
 	hideVerifyFly();
-	jump(selectedPlanet);
+	if (animating) {
+		notificationMessage('Wait until the current flight is over!')
+	} else{
+		jump(selectedPlanet);
+	};
 }
 
 function clickInfo(planetId) {
 	selectedPlanet = planetId;
 	if (gamestate.currentPlanet == planetId) {
-		reveal('currentPlanet')
+		reveal('currentPlanet');
 		hide('flyToButtonHider');
 	} else{
-		hide('currentPlanet')
+		hide('currentPlanet');
 		reveal('flyToButtonHider');
 		document.getElementById('flyToButton').onclick = function() {verifyFly(planetId)};
 		for (var item in gamestate.costCache) {
