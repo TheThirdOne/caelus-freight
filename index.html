@@ -7,44 +7,44 @@
     <link rel="stylesheet" type="text/css" href="css/ship.css">
     <style>
       @-webkit-keyframes fly{
-  from{
-    transform: rotate(180deg);
-    height:10px;
-    width:10px;
-    margin:-5 0 0 -5;
-  }
-  10%{
-    transform: rotate(180deg);
-    height:50px;
-    width:50px;
-    margin:-25 0 0 -25;
-  }
-  30%{
-    transform: rotate(270deg);
-    left: 500px;
-    height:50px;
-    width:50px;
-    margin:-25 0 0 -25;
-  }
-  90%{
-    left: 0px;
-    height:50px;
-    width:50px;
-    margin:-50 0 0 0;
-  }
-  to{
-    transform: rotate(270deg);
-    left: 50px;
-    height:10px;
-    width:10px;
-    margin:-5 0 0 -5;
-  }
-}
+        from{
+          transform: rotate(180deg);
+          height:10px;
+          width:10px;
+          margin:-5 0 0 -5;
+        }
+        10%{
+          transform: rotate(180deg);
+          height:50px;
+          width:50px;
+          margin:-25 0 0 -25;
+        }
+        30%{
+          transform: rotate(270deg);
+          left: 500px;
+          height:50px;
+          width:50px;
+          margin:-25 0 0 -25;
+        }
+        90%{
+          left: 0px;
+          height:50px;
+          width:50px;
+          margin:-50 0 0 0;
+        }
+        to{
+          transform: rotate(270deg);
+          left: 50px;
+          height:10px;
+          width:10px;
+          margin:-5 0 0 -5;
+        }
+      }
     </style>
     <script src="generator.js"></script>
     <script src="interface.js"></script>
   </head>
-  <body>
+  <body onload="updateInventory();">
     <div class="map">
       <div class="starscape" onClick="hideInfo();">
         <div id="starsContainer"><div id="star" class="planet" style="background:white;height:1px;width:1px;"></div></div>
@@ -154,23 +154,10 @@
         </div>
       </div>
       <div class="bottomBar panel">
-        <!--<table>
-          <tr>
-            <td><h2 class="panel clickable success">Success</h2></td>
-            <td><h2 class="panel clickable disabled">Disabled</h2></td>
-            <td><h2 class="panel clickable alert" onclick="">Alert!</h2></td>
-          </tr>
-          <tr>
-            <td><h2 class="panel clickable info" onClick="updateInventory();">Info</h2></td>
-            <td><h2 class="panel clickable">Option</h2></td>
-            <td><h2 class="panel clickable">Option</h2></td>
-          </tr>
-        </table>-->
         <br>
         <div class="stats panel">
           <p>Credits: <span id="credits"></span></p>
           <p>Fuel: <span id="fuel"></span></p>
-
         </div>
         <br>
         <div class="inventory panel">
@@ -198,7 +185,6 @@
         <div id="optionsMenu" class="panel">
           <p href="" id="asteroidToggle" onClick="toggleAsteroids();">Asteroids toggle</p>
           <p href="" id="starToggle" onClick="toggleStars();">Stars toggle</p>
-          <p href="" >Info bar toggle</p>
         </div>
       </div>
       <script src="travel.js"></script>
