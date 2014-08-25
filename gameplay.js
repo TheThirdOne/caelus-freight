@@ -10,15 +10,26 @@ gamestate.currentPlanet = 0;
 gamestate.costCache = [];
 
 function onStart(){
+  
+  onArrive();
+}
+
+function newGame(){
   //random gen gamestate.planetData
-  //gen player stats
-  onArrive();
+  //gen player state
+  onStart();
 }
-function onLoadGame(){
-  //Load gamestate.planetData
-  //load player stats
-  onArrive();
+
+function loadGame(name){
+  gamestate = JSON.parse(localStorage[name]);
+  onStart();
 }
+
+function saveGame(name){
+  localStorage.setItem(name,JSON.stringify(gamestate));
+}
+
+
 function onArrive(){
   timeStep();
   gamestate.costCache = generateCosts(gamestate.currentPlanet);
