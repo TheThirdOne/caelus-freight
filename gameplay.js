@@ -120,4 +120,5 @@ function transaction(itemName,itemQuantity) {
   } else{
     showNotification("You cannot afford this transaction");
   };
+  updateTransactionList()
 }
