@@ -15,6 +15,8 @@ function pageLoad() {
   updateInventory(); 
   toggleStars(); 
   toggleAsteroids();
+  updateTransactionList();
+  setCosts();
 }
 
 function onStart(){
@@ -52,6 +54,10 @@ function onLeave(to){
   updateInventory()
   gamestate.currentPlanet = to;
   timeStep();
+  setCosts();
+}
+
+function setCosts() {
   gamestate.costCache = generateCosts(gamestate.currentPlanet);
 }
 
@@ -115,6 +121,7 @@ function jump(to){
 }
 
 function transaction(itemName,itemQuantity) {
+  console.log(itemQuantity, '+(', gamestate.playerData.inventory[itemName], '|| 0 ) >= 0 &&', gamestate.playerData.inventory.credits, '+(',itemQuantity,'*',gamestate.costCache[itemName],') >=0')
   // item quantity + inventory quantity >= 0 && player credits + (itemQuantity * item cost on planet) >= 0
   if (itemQuantity + (gamestate.playerData.inventory[itemName] || 0) >= 0 && gamestate.playerData.inventory.credits + (itemQuantity * gamestate.costCache[itemName]) >= 0 ) {
     gamestate.playerData.inventory[itemName] = itemQuantity + (gamestate.playerData.inventory[itemName]||0);
@@ -124,4 +131,10 @@ function transaction(itemName,itemQuantity) {
     showNotification("You cannot afford this transaction");
   };
   updateTransactionList()
+}
+
+function randomEvent(chance) {
+  if ((Math.random()*1000) >= chance) {
+    
+  };
 }
