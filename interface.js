@@ -67,7 +67,7 @@ function updateTransactionList() {
 	}
 	document.getElementById('sell').innerHTML = '';
 	for (var item in gamestate.playerData.inventory) {
-		if (item != 'credits') {
+		if (item != 'credits' && gamestate.playerData.inventory[item] > 0) {
 			var div = document.createElement('div');
 			div.className = 'panel transactable';
 			div.onclick = function() {
