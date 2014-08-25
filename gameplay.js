@@ -32,9 +32,6 @@ function saveGame(name){
 
 
 function onArrive(){
-  timeStep();
-  gamestate.costCache = generateCosts(gamestate.currentPlanet);
-  
   var a = document.getElementById(gamestate.planetData[gamestate.currentPlanet].name);
   a.className = "track currentTrack";
   loadPlanetInterface(gamestate.currentPlanet);
@@ -47,6 +44,8 @@ function onLeave(to){
   hideInfo();
   updateInventory()
   gamestate.currentPlanet = to;
+  timeStep();
+  gamestate.costCache = generateCosts(gamestate.currentPlanet);
 }
 
 function generateWorlds(){
