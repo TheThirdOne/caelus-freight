@@ -17,6 +17,7 @@ function pageLoad() {
   toggleAsteroids();
   updateTransactionList();
   setCosts();
+  showEvent('Ready to start playing? Have fun out there!', 'BlueMars.png', 'Caelus-logoShadow.png', '');
 }
 
 function onStart(){
