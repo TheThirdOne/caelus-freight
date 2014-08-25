@@ -10,6 +10,13 @@ gamestate.currentPlanet = 0;
 gamestate.costCache = [];
 gamestate.supplyCache = [];
 
+function pageLoad() {
+  //Anything to run at onLoad of page
+  updateInventory(); 
+  toggleStars(); 
+  toggleAsteroids();
+}
+
 function onStart(){
   
   onArrive();
