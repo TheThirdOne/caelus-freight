@@ -50,7 +50,7 @@ function clickInfo(planetId) {
 		document.getElementById('purchase').innerHTML = '';
 		for (var item in gamestate.costCache) {
 			var div = document.createElement('div');
-			div.className = 'panel';
+			div.className = 'panel transactable';
 			div.innerHTML = item;
 			document.getElementById('purchase').appendChild(div);
 		}
@@ -58,7 +58,12 @@ function clickInfo(planetId) {
 		for (var item in gamestate.playerData.inventory) {
 			if (item != 'credits') {
 				var div = document.createElement('div');
-				div.className = 'panel';
+				div.className = 'panel transactable';
+				console.log(item);
+				div.onclick = function() {
+					transaction(item,-1);
+					console.log(item);
+				}
 				div.innerHTML = item;
 				document.getElementById('sell').appendChild(div);
 			};

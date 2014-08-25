@@ -135,3 +135,6 @@ td .clickable {
 	margin: 0px;
 	padding: 0px;
 }
+.transactable:hover {
+	background: rgba(255,255,255,0.15);
+}

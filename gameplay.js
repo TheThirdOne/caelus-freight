@@ -102,9 +102,12 @@ function jump(to){
     showNotification('You do not have enough fuel to complete the journey');
   }
 }
-
+function test (test) {
+  console.log(gamestate.playerData.inventory[test])
+}
 function transaction(itemName,itemQuantity) {
   // item quantity + inventory quantity >= 0 && player credits + (itemQuantity * item cost on planet) >= 0
+  console.log(gamestate.playerData.inventory[itemName])
   if (itemQuantity + gamestate.playerData.inventory[itemName] >= 0 && gamestate.playerData.inventory.credits + (itemQuantity * gamestate.costCache[itemName]) >= 0 ) {
     gamestate.playerData.inventory[itemName] += itemQuantity;
     gamestate.playerData.inventory.credits += (itemQuantity * gamestate.costCache[itemName]);
