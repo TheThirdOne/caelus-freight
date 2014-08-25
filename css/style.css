@@ -37,6 +37,8 @@ html, body {
 * {
   font-family: Helvetica, 'arial';
   color: white;
+  -webkit-user-select: none;
+  user-select: none;
 }
 .map {
   position: relative;
