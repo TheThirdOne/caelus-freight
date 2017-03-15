@@ -66,7 +66,7 @@ function generateAnimation(to,from,startAngle){
   keyframes.deleteRule("90%");
   keyframes.deleteRule("to");
   
-  keyframes.insertRule(
+  keyframes.appendRule(
     "from{"
     + fromRotate
     + fromLoc +
@@ -75,14 +75,14 @@ function generateAnimation(to,from,startAngle){
       margin:-5 0 0 -5;\
     }");
     
-  keyframes.insertRule(
+  keyframes.appendRule(
     "10%{"
     + fromRotate +
     "  height:50px;\
       width:50px;\
       margin:-25 0 0 -25;\
     }");
-  keyframes.insertRule(
+  keyframes.appendRule(
     "30%{"
     + toRotate
     + fromLoc +
@@ -90,14 +90,14 @@ function generateAnimation(to,from,startAngle){
       width:50px;\
       margin:-25 0 0 -25;\
     }");
-  keyframes.insertRule(
+  keyframes.appendRule(
     "90%{"
     + toLoc +
     " height:50px;\
       width:50px;\
       margin:-50 0 0 0;\
     }");
-  keyframes.insertRule(
+  keyframes.appendRule(
     "to{"
     + toRotate
     + toLoc +
